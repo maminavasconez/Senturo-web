@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="assets/ds/styles.css">
+<script src="assets/ds/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:#FFFFFF;color:#121218;font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#8248E1;text-decoration:none}a:hover{color:#6B38C8}
+p,h1,h2,h3,h4{margin:0}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+
+<div data-screen-label="Remote Wipe" style="width:100%;min-width:0;overflow-x:clip">
+
+<div style="position:sticky;top:12px;z-index:200;display:flex;justify-content:center;padding:0 16px">
+  <header style="max-width:1180px;width:100%;display:flex;align-items:center;gap:28px;padding:8px 8px 8px 20px;border-radius:9999px;background:rgba(255,255,255,.72);backdrop-filter:blur(18px);border:1px solid {{ navBorder }};box-shadow:{{ navShadow }};transition:box-shadow .25s ease,border-color .25s ease">
+    <a href="Senturo Homepage v3.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/logo-full.svg" alt="Senturo" style="height:26px;width:auto;display:block"></a>
+    <nav style="display:flex;align-items:center;gap:4px;flex:1;min-width:0;flex-wrap:wrap">
+      <a href="Senturo Homepage v3.dc.html#platform" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Platform<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+      <div onMouseEnter="{{ featEnter }}" onMouseLeave="{{ featLeave }}" style="position:relative">
+        <a href="Features.dc.html" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#562CAD;background:#F5F0FD;padding:8px 12px;border-radius:9999px">Features<span style="width:14px;height:14px;background:#562CAD;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+        <sc-if value="{{ featOpen }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;top:100%;left:0;padding-top:10px;z-index:300;animation:fadeUp .2s ease-out both"><div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 20px 40px -16px rgba(18,18,24,.22);padding:8px;min-width:250px;display:flex;flex-direction:column;gap:2px">
+          <a href="Features.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#3E3E4A;background:transparent;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/layout-grid.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/layout-grid.svg) center / contain no-repeat"></span>Features overview</a>
+          <a href="Missing Mode.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#3E3E4A;background:transparent;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat"></span>Missing Mode</a>
+          <a href="Remote Lock.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#3E3E4A;background:transparent;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat"></span>Senturo Lock</a>
+          <a href="Remote Wipe.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#562CAD;background:#F5F0FD;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat"></span>Remote Wipe</a>
+          <a href="Broadcasting.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#3E3E4A;background:transparent;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat"></span>Broadcast Messaging</a>
+        </div></div></sc-if>
+      </div>
+      <a href="Senturo Homepage v3.dc.html#integrations" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Integrations<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+      <a href="MSPs.dc.html" style-hover="background:#F0F0F2;color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">MSPs</a>
+      <a href="Senturo Homepage v3.dc.html#stories" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Company<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+      <a href="Senturo Homepage v3.dc.html#faq" style-hover="background:#F0F0F2;color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Our Data</a>
+      <a href="price-request.dc.html" style-hover="background:#F0F0F2;color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Pricing</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <a href="#" style-hover="color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;transition:color .2s ease">Login</a>
+      <a href="book-demo.dc.html" target="_blank" rel="noopener" style="display:inline-flex"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="md" right-icon="{{ arrowWhite }}" hint-size="150px,40px">Book a Demo</x-import></a>
+    </div>
+  </header>
+</div>
+
+<section data-screen-label="Hero" style="margin-top:-68px;padding-top:68px;background:radial-gradient(ellipse 55% 60% at 78% 30%,rgba(130,72,225,.24) 0%,rgba(130,72,225,0) 70%),radial-gradient(ellipse 40% 40% at 10% 90%,rgba(130,72,225,.08) 0%,rgba(130,72,225,0) 70%),#F8F8F9;position:relative;overflow:hidden">
+<div style="max-width:1240px;margin:0 auto;padding:112px 32px 136px;position:relative">
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:36px;min-width:0;align-items:center;animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) both">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Features</span>
+      <h1 style="font-size:clamp(40px,5vw,72px);font-weight:800;letter-spacing:-0.045em;line-height:1;color:#121218;text-wrap:balance;text-align:center;max-width:1100px">Remove Sensitive Data <span style="color:#562CAD">Without Losing Track</span></h1>
+      <p style="width:100%;max-width:1000px;font-size:clamp(20px,1.9vw,26px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">Lost, stolen, or compromised device? Senturo Wipe lets you remove user files, accounts, and other sensitive data from Windows and macOS devices remotely, while Senturo stays on top of tracking their location.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center"><a href="book-demo.dc.html" target="_blank" rel="noopener" style="display:inline-flex"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" right-icon="{{ arrowWhite }}" hint-size="170px,48px">Book a Demo</x-import></a></div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5E5E6A">Senturo Wipe works with</span><span style="font-size:13px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:999px;padding:6px 12px;line-height:1">Windows</span><span style="font-size:13px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:999px;padding:6px 12px;line-height:1">macOS</span></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Overview" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Overview</span>
+      <h2 style="font-size: clamp(36px,4.8vw,64px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: #121218; text-wrap: balance; max-width: 1000px; width: 524px; height: 76px">Protect <span style="color:#562CAD">Your Data</span></h2>
+      <p style="width:100%;max-width:1000px;font-size:clamp(22px,2.2vw,30px);font-weight:700;letter-spacing:-0.01em;color:#121218;line-height:1.35;text-align:center;text-wrap:balance">Sometimes the data matters more than the hardware. Protect it first, then keep working to get the device back.</p>
+      <p style="width:100%;max-width:1000px;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">That’s why Wipe lets you remove personal and sensitive data remotely. Tracking carries on, so you can still monitor the device, even after the data is gone.</p>
+      <p style="width:100%;max-width:1000px;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">Pair Wipe with Senturo Missing Mode, Senturo Lock, and the rest of your recovery actions to build a security response that’s right for whatever you’re handling.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Capabilities" style="background:#F8F8F9;border-top:1px solid #F0F0F2;border-bottom:1px solid #F0F0F2">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Capabilities</span>
+      <h2 style="font-size: clamp(36px,4.8vw,64px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: #121218; text-wrap: balance; max-width: 1000px; width: 1006px; height: 135px">Choose How You Use <span style="color:#562CAD">Senturo Wipe</span></h2>
+      <p style="width:100%;max-width:1000px;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">Remove sensitive information after a confirmation step, or add Wipe to supported automations and connected workflows. Either way, your data is safe.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Remove personal data</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Clear user files, accounts, and personal data from your supported Windows and macOS devices.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Stay visible</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Senturo stays active, which means your devices stay enrolled and visible after the wipe.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Continue the recovery</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Keep following the device after local user data is gone, so you can continue working to recover the hardware.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">No accidental data deletion</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">You can’t unwipe, but don’t worry about deleting data accidentally. Senturo Wipe needs confirmation before it’s deployed.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/workflow.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/workflow.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Add Wipe to your automations</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Use Wipe alongside Missing Mode, location pulls, network data collection, tags, broadcasts, and admin notifications.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/plug.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/plug.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Use Wipe with Incident IQ</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Already use Incident IQ? Use Wipe as part of its workflow.</p>
+      </div>
+    </div>
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
+      <p style="width:100%;max-width:1100px;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">Security incidents rarely stand still, so mix and match your response as things develop. Use Wipe with Missing Mode, Lock, location visibility, network data, and Security Policy Automations.</p>
+      <a href="book-demo.dc.html" target="_blank" rel="noopener" style="display:inline-flex"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" right-icon="{{ arrowWhite }}" hint-size="170px,48px">Book a Demo</x-import></a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Why Senturo" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px 0">
+    <div data-reveal="" style="background:#2A1556;border:1px solid #2A1556;border-radius:28px;padding:72px 56px;display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center;position:relative;overflow:hidden"><span style="position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.4),rgba(130,72,225,0) 70%);pointer-events:none"></span>
+      <span style="position:relative"><span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#B59AEF"><span style="width:6px;height:6px;border-radius:50%;background:#B59AEF"></span>Why Senturo</span></span>
+      <h2 style="font-size:clamp(32px,3.6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:#FFFFFF;text-wrap:balance;max-width:900px;position:relative">Keep Track of Your Device, <span style="color:#B59AEF">Even After the Data’s Gone</span></h2>
+      <p style="font-size:20px;font-weight:600;line-height:1.5;color:#FFFFFF;max-width:820px;text-wrap:balance;position:relative">Removing the data doesn’t have to end your recovery process.</p>
+      <p style="font-size:18px;line-height:1.6;color:#E9DDFB;max-width:820px;text-wrap:balance;position:relative">Senturo Wipe removes personal data but Senturo stays tracking. Your device remains enrolled and visible, even after the wipe. You can rest easy knowing the data is safe, while you work to get that device back.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Wipe options" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Wipe options</span>
+      <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-wrap:balance;max-width:1000px">Choose the Right Wipe <span style="color:#562CAD">for the Situation</span></h2>
+      <p style="width:100%;max-width:1000px;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">You can use Senturo’s own Wipe action or the wipe commands from your supported MDM integrations. Each suits a different response workflow, so pick the one that’s right for your setup.</p>
+      <p style="width:100%;max-width:900px;font-size:17px;line-height:1.65;color:#5E5E6A;text-align:center;text-wrap:balance">No need to swap anything out. Senturo works with your existing tools, including Microsoft Intune, Jamf Pro, Google Admin Console, Cisco Meraki, and Incident IQ.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Use cases" style="background:#F8F8F9;border-top:1px solid #F0F0F2;border-bottom:1px solid #F0F0F2">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Use cases</span>
+      <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-wrap:balance;max-width:1000px">When To Use <span style="color:#562CAD">Senturo Wipe</span></h2>
+      <p style="width:100%;max-width:1000px;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">Reach for Wipe when your data is at risk and tracking or locking a device is no longer enough.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:20px">
+      <div data-reveal="" onMouseEnter="{{ flip.e0 }}" onMouseLeave="{{ flip.leave }}" onClick="{{ flip.c0 }}" style="perspective:1200px;height:300px;cursor:pointer">
+        <div style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform:{{ flip.r0 }}">
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;background:#FFFFFF;border:1px solid #E4E4E8;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:28px;align-items:center;justify-content:center;gap:20px;text-align:center">
+            <span style="width:64px;height:64px;border-radius:18px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:30px;height:30px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin-off.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin-off.svg) center / contain no-repeat"></span></span>
+            <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.25;color:#121218;text-wrap:balance">Lost or stolen laptop</h3>
+          </div>
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;transform:rotateY(180deg);background:#2A1556;border:1px solid #2A1556;padding:28px;gap:14px;justify-content:flex-start">
+            <div style="display:flex;align-items:center;gap:12px"><span style="width:22px;height:22px;flex:none;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin-off.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin-off.svg) center / contain no-repeat"></span><h3 style="font-size:19px;font-weight:800;letter-spacing:-0.01em;line-height:1.25;color:#FFFFFF;text-wrap:balance">Lost or stolen laptop</h3></div>
+            <p style="font-size:16px;line-height:1.6;color:#FFFFFF;text-wrap:pretty">Remove personal and user data from a Windows or macOS device and keep monitoring it through Senturo.</p>
+          </div>
+        </div>
+      </div>
+      <div data-reveal="" onMouseEnter="{{ flip.e1 }}" onMouseLeave="{{ flip.leave }}" onClick="{{ flip.c1 }}" style="perspective:1200px;height:300px;cursor:pointer">
+        <div style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform:{{ flip.r1 }}">
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;background:#FFFFFF;border:1px solid #E4E4E8;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:28px;align-items:center;justify-content:center;gap:20px;text-align:center">
+            <span style="width:64px;height:64px;border-radius:18px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:30px;height:30px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/bug.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/bug.svg) center / contain no-repeat"></span></span>
+            <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.25;color:#121218;text-wrap:balance">Compromised device</h3>
+          </div>
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;transform:rotateY(180deg);background:#2A1556;border:1px solid #2A1556;padding:28px;gap:14px;justify-content:flex-start">
+            <div style="display:flex;align-items:center;gap:12px"><span style="width:22px;height:22px;flex:none;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/bug.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/bug.svg) center / contain no-repeat"></span><h3 style="font-size:19px;font-weight:800;letter-spacing:-0.01em;line-height:1.25;color:#FFFFFF;text-wrap:balance">Compromised device</h3></div>
+            <p style="font-size:16px;line-height:1.6;color:#FFFFFF;text-wrap:pretty">Worried a device might be compromised? Simply clear its local user data to protect the information on it.</p>
+          </div>
+        </div>
+      </div>
+      <div data-reveal="" onMouseEnter="{{ flip.e2 }}" onMouseLeave="{{ flip.leave }}" onClick="{{ flip.c2 }}" style="perspective:1200px;height:300px;cursor:pointer">
+        <div style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform:{{ flip.r2 }}">
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;background:#FFFFFF;border:1px solid #E4E4E8;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:28px;align-items:center;justify-content:center;gap:20px;text-align:center">
+            <span style="width:64px;height:64px;border-radius:18px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:30px;height:30px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat"></span></span>
+            <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.25;color:#121218;text-wrap:balance">Recovery escalation</h3>
+          </div>
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;transform:rotateY(180deg);background:#2A1556;border:1px solid #2A1556;padding:28px;gap:14px;justify-content:flex-start">
+            <div style="display:flex;align-items:center;gap:12px"><span style="width:22px;height:22px;flex:none;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat"></span><h3 style="font-size:19px;font-weight:800;letter-spacing:-0.01em;line-height:1.25;color:#FFFFFF;text-wrap:balance">Recovery escalation</h3></div>
+            <p style="font-size:16px;line-height:1.6;color:#FFFFFF;text-wrap:pretty">Start with Missing Mode, location visibility, and Senturo Lock while you work on recovery. Move to Wipe when protecting the data becomes the priority. Locking keeps your recovery options open. With Wipe, data protection comes first.</p>
+          </div>
+        </div>
+      </div>
+      <div data-reveal="" onMouseEnter="{{ flip.e3 }}" onMouseLeave="{{ flip.leave }}" onClick="{{ flip.c3 }}" style="perspective:1200px;height:300px;cursor:pointer">
+        <div style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform:{{ flip.r3 }}">
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;background:#FFFFFF;border:1px solid #E4E4E8;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:28px;align-items:center;justify-content:center;gap:20px;text-align:center">
+            <span style="width:64px;height:64px;border-radius:18px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:30px;height:30px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/recycle.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/recycle.svg) center / contain no-repeat"></span></span>
+            <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.25;color:#121218;text-wrap:balance">Device decommissioning</h3>
+          </div>
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;transform:rotateY(180deg);background:#2A1556;border:1px solid #2A1556;padding:28px;gap:14px;justify-content:flex-start">
+            <div style="display:flex;align-items:center;gap:12px"><span style="width:22px;height:22px;flex:none;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/recycle.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/recycle.svg) center / contain no-repeat"></span><h3 style="font-size:19px;font-weight:800;letter-spacing:-0.01em;line-height:1.25;color:#FFFFFF;text-wrap:balance">Device decommissioning</h3></div>
+            <p style="font-size:16px;line-height:1.6;color:#FFFFFF;text-wrap:pretty">Remove personal data from your supported Windows or macOS devices before you reassign or retire them, Senturo stays active for the rest of the workflow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Security Policy Automations" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Security Policy Automations</span>
+      <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-wrap:balance;max-width:1100px;text-align:center">Make Wipe One Step in a <span style="color:#562CAD">Bigger Security Plan</span></h2>
+      <p style="width:100%;max-width:1000px;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">Add Wipe to a Security Policy Automation and it will run alongside your other security and recovery actions.</p>
+    </div>
+    <div data-reveal="" style="width:100%;max-width:1180px;margin:0 auto;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:20px;padding:28px 28px 28px 32px;display:flex;flex-direction:column;gap:16px">
+      <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-align:center">A typical recovery workflow using Wipe</h3>
+      <div style="display:flex;flex-wrap:nowrap;align-items:center;gap:6px;overflow-x:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;background:#F8F8F9;border:1px solid #E4E4E8;border-radius:8px;padding:8px 10px;line-height:1.3;flex:1 1 auto;min-width:0;text-align:center;text-wrap:balance">Security Condition Triggered</span><span style="display:inline-flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0"><span style="width:16px;height:16px;flex:none;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat"></span><span style="font-size:13px;font-weight:600;color:#3E3E4A;background:#F8F8F9;border:1px solid #E4E4E8;border-radius:8px;padding:8px 10px;line-height:1.3;flex:1 1 auto;min-width:0;text-align:center;text-wrap:balance">Set Missing Mode</span></span><span style="display:inline-flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0"><span style="width:16px;height:16px;flex:none;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat"></span><span style="font-size:13px;font-weight:600;color:#3E3E4A;background:#F8F8F9;border:1px solid #E4E4E8;border-radius:8px;padding:8px 10px;line-height:1.3;flex:1 1 auto;min-width:0;text-align:center;text-wrap:balance">Pull Current Location</span></span><span style="display:inline-flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0"><span style="width:16px;height:16px;flex:none;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat"></span><span style="font-size:13px;font-weight:600;color:#3E3E4A;background:#F8F8F9;border:1px solid #E4E4E8;border-radius:8px;padding:8px 10px;line-height:1.3;flex:1 1 auto;min-width:0;text-align:center;text-wrap:balance">Pull Network Data</span></span><span style="display:inline-flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0"><span style="width:16px;height:16px;flex:none;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat"></span><span style="font-size:13px;font-weight:600;color:#3E3E4A;background:#F8F8F9;border:1px solid #E4E4E8;border-radius:8px;padding:8px 10px;line-height:1.3;flex:1 1 auto;min-width:0;text-align:center;text-wrap:balance">Notify Admin</span></span><span style="display:inline-flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0"><span style="width:16px;height:16px;flex:none;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat"></span><span style="font-size:13px;font-weight:600;color:#FFFFFF;background:#8248E1;border:1px solid #8248E1;border-radius:8px;padding:8px 10px;line-height:1.3;flex:1 1 auto;min-width:0;text-align:center;text-wrap:balance">Wipe Files</span></span></div>
+    </div>
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+      <p style="width: 1005px; max-width: 1000px; font-size: clamp(18px,1.6vw,22px); font-weight: 600; color: #3E3E4A; line-height: 1.45; text-align: center; text-wrap: balance; height: 86px">You can also build in Lock, Unlock, Broadcast Messaging, device tags, notes, and admin notifications to your recovery workflow.</p>
+      <p style="width:fit-content;max-width:min(100%,820px);margin:0 auto;background:#F5F0FD;border:1px solid #E9DDFB;color:#562CAD;font-size:16px;font-weight:600;line-height:1.6;padding:16px 24px;border-radius:20px;text-align:center;text-wrap:balance">Don’t forget, Wipe removes data for good, so it’s important to build your automation around your organization’s incident-response policy and approval process.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Getting started" style="background:#F8F8F9;border-top:1px solid #F0F0F2;border-bottom:1px solid #F0F0F2">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Getting started</span>
+      <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-wrap:balance;max-width:1000px">Wipe a Device in <span style="color:#562CAD">Six Easy Steps</span></h2>
+      <p style="width:100%;max-width:1000px;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">Wipe follows a step-by-step workflow with pre-wipe confirmation built in, so that you don’t wipe data accidentally. Here’s how it works:</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:center">
+      <div data-reveal="" style="background:radial-gradient(ellipse 80% 70% at 30% 0%,#E9DDFB,#F5F0FD 75%);border-radius:28px;padding:40px;min-width:0"><div style="aspect-ratio:16/10;width:100%;border-radius:14px;border:1.5px dashed #CACACE;background:repeating-linear-gradient(135deg,#F8F8F9 0 12px,#F0F0F2 12px 24px);display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center"><span style="width:36px;height:36px;background:#B59AEF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/play.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/play.svg) center / contain no-repeat"></span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#5E5E6A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:5px 8px">placeholder · Webflow video</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start">
+          <span style="width:44px;height:44px;border-radius:50%;background:#8248E1;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800">1</span>
+          <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px"><h3 style="font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#121218">Select your device</h3><p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Open the supported Windows or macOS device in Senturo.</p></div>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start">
+          <span style="width:44px;height:44px;border-radius:50%;background:#8248E1;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800">2</span>
+          <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px"><h3 style="font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#121218">Open Management</h3><p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Open the Management area and review the list of security controls.</p></div>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start">
+          <span style="width:44px;height:44px;border-radius:50%;background:#8248E1;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800">3</span>
+          <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px"><h3 style="font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#121218">Switch to Missing Mode</h3><p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Set the device to Missing Mode.</p></div>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start">
+          <span style="width:44px;height:44px;border-radius:50%;background:#8248E1;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800">4</span>
+          <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px"><h3 style="font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#121218">Choose Senturo Wipe</h3><p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Select Senturo Wipe from the security controls list.</p></div>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start">
+          <span style="width:44px;height:44px;border-radius:50%;background:#8248E1;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800">5</span>
+          <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px"><h3 style="font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#121218">Confirm Wipe</h3><p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Approve the confirmation prompt to send the wipe command.</p></div>
+        </div>
+        <div data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start">
+          <span style="width:44px;height:44px;border-radius:50%;background:#8248E1;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800">6</span>
+          <div style="display:flex;flex-direction:column;gap:6px;padding-top:6px"><h3 style="font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#121218">Continue monitoring</h3><p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">After the wipe, keep using Senturo to check the device’s status and recovery information.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Access control" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px 0">
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;overflow:hidden">
+      <div style="padding:64px 56px;display:flex;flex-direction:column;gap:22px;justify-content:center;min-width:0">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Access control</span>
+        <h2 style="font-size:clamp(28px,2.6vw,38px);font-weight:800;letter-spacing:-0.035em;line-height:1.12;color:#121218;text-wrap:pretty">Keep High-Risk Actions <span style="color:#8248E1">in the Right Hands</span></h2>
+        <p style="font-size:18px;font-weight:600;line-height:1.5;color:#3E3E4A;text-wrap:pretty">You decide exactly who can wipe a device. Wipe permissions are separate from other Senturo capabilities, so irreversible actions stay with the people you choose.</p>
+        <p style="font-size:17px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Give someone the right permissions and they can run selected lock or wipe actions without ever seeing the device location or other device information. Give helpdesk and investigator roles broader recovery capabilities when their jobs call for it.</p>
+        <p style="font-size:17px;font-weight:600;line-height:1.6;color:#562CAD;text-wrap:pretty">Hand off urgent device security actions without handing over sensitive fleet information.</p>
+      </div>
+      <div style="background:radial-gradient(ellipse 80% 70% at 70% 100%,#E9DDFB,#F5F0FD 75%);padding:48px 40px;display:flex;align-items:center;justify-content:center;min-width:0"><img src="assets/remote-invite-users.png" alt="Senturo Invite Users dialog with the Remote role selected" style="width:100%;max-width:480px;height:auto;display:block;border-radius:16px;box-shadow:0 20px 40px -16px rgba(42,21,86,.3)"></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Integrations" style="background:#FFFFFF">
+  
+<div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Works with your existing tools</span>
+      <h2 style="font-size: clamp(36px,4.8vw,64px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: #121218; text-wrap: balance; max-width: 960px; width: 960px; height: 166px">Use Senturo Wipe With <span style="color:#562CAD">The Tools You Already Use</span></h2>
+      <p style="width:100%;max-width:1000px;font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.45;text-align:center;text-wrap:balance">You don’t need to change your MDM, asset-management, or support tools. Senturo works alongside them.</p>
+    </div>
+    
+    <p data-reveal="" style="width:fit-content;max-width:min(100%,820px);margin:0 auto;background:#F5F0FD;border:1px solid #E9DDFB;color:#562CAD;font-size:17px;font-weight:600;line-height:1.6;padding:20px 28px;border-radius:20px;text-align:center;text-wrap:balance">Your MDM still handles its own device management. If you use Incident IQ, you can also run supported recovery and security actions from there, too.</p><div data-reveal="" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;width:100%;max-width:1120px;margin:0 auto">
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/gadmin.png" alt="Google Admin Console" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/intune.png" alt="Microsoft Intune" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/jamf.png" alt="Jamf Pro" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/meraki.png" alt="Cisco Meraki" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/iiq.png" alt="Incident IQ" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+    </div><p data-reveal="" style="font-size:15px;line-height:1.6;color:#5E5E6A;text-align:center;text-wrap:balance">Senturo Wipe works with Google Admin Console, Microsoft Intune, Jamf Pro, Cisco Meraki, and Incident IQ.</p>
+  
+  </div></section>
+
+    
+<section data-screen-label="Closing CTA" id="demo" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px 120px">
+    <div data-reveal="" style="background:radial-gradient(ellipse 90% 60% at 100% 0%,#562CAD,#2A1556 60%);border:1px solid #2A1556;border-radius:28px;padding:80px 48px;display:flex;flex-direction:column;gap:24px;align-items:center;text-align:center">
+      <h2 style="font-size:clamp(32px,3.6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:#B59AEF;text-wrap:balance;max-width:900px">Ready to connect?</h2>
+      <h2 style="font-size:clamp(32px,3.6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:#FFFFFF;text-wrap:balance;max-width:900px">Protect Your Data Without Losing Sight of the Device</h2>
+      <p style="width:100%;max-width:820px;font-size:18px;line-height:1.6;color:#D0BCF5;text-wrap:balance">Deal with a missing device from one place. Senturo combines remote Wipe, remote Lock, Missing Mode, location visibility, security automations, and recovery tools into one effective security workflow.</p>
+      <div style="padding-top:8px"><a href="book-demo.dc.html" target="_blank" rel="noopener" style="display:inline-flex"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="xl" right-icon="{{ arrowWhite }}" hint-size="190px,56px">Book a Demo</x-import></a></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="FAQ" id="faq" style="background:#F8F8F9">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <h2 data-reveal="" style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-align:center">Frequently asked questions</h2>
+    <div style="width:100%;max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:16px;min-width:0">
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f0.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">What is Senturo Wipe?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f0.iconColor }};-webkit-mask:url({{ f0.icon }}) center / contain no-repeat;mask:url({{ f0.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f0.open }}" hint-placeholder-val="{{ true }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Senturo Wipe is a feature of Senturo that removes user files, accounts, and personal data from supported Windows and macOS devices remotely. The Senturo agent stays active, so you can still see and manage the device after the data is wiped.</p></sc-if>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f1.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Which devices does Senturo Wipe support?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f1.iconColor }};-webkit-mask:url({{ f1.icon }}) center / contain no-repeat;mask:url({{ f1.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f1.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Native Senturo Wipe currently supports Windows and macOS.</p></sc-if>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f2.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Will Wipe take Senturo off the device?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f2.iconColor }};-webkit-mask:url({{ f2.icon }}) center / contain no-repeat;mask:url({{ f2.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f2.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Absolutely not. Senturo stays active after the wipe, so your device stays connected and visible on your Senturo dashboard.</p></sc-if>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f3.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">What data does Senturo Wipe remove?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f3.iconColor }};-webkit-mask:url({{ f3.icon }}) center / contain no-repeat;mask:url({{ f3.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f3.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">It removes user files, accounts, and personal data. The system files the device needs and the Senturo agent stay put.</p></sc-if>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f4.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Can I undo a Senturo Wipe?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f4.iconColor }};-webkit-mask:url({{ f4.icon }}) center / contain no-repeat;mask:url({{ f4.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f4.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Sorry, no. Wipe is an irreversible action. Use it only when your organization’s data protection strategy or recovery policy calls for permanent data removal.</p></sc-if>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f5.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Does the device remain trackable after a wipe?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f5.iconColor }};-webkit-mask:url({{ f5.icon }}) center / contain no-repeat;mask:url({{ f5.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f5.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Of course. Wipe is designed to leave the Senturo in place, so the device will carry on reporting to you after the user data is gone.</p></sc-if>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f6.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Do I have to switch to Missing Mode before I can use Senturo Wipe?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f6.iconColor }};-webkit-mask:url({{ f6.icon }}) center / contain no-repeat;mask:url({{ f6.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f6.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Yes. Your device has to be switched to Missing Mode before you can deploy the Wipe command.</p></sc-if>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f7.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Can Senturo Wipe be automated?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f7.iconColor }};-webkit-mask:url({{ f7.icon }}) center / contain no-repeat;mask:url({{ f7.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f7.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Absolutely. You can add Wipe files as an action in Security Policy Automations on supported devices.</p></sc-if>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f8.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Can my IT team wipe devices without seeing things like location data?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f8.iconColor }};-webkit-mask:url({{ f8.icon }}) center / contain no-repeat;mask:url({{ f8.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f8.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Yes. With Senturo’s Remote role, your people can run selected remote lock and remote wipe actions without seeing the device’s location or investigation details.</p></sc-if>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+        <button onClick="{{ f9.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Does Senturo replace my MDM for remote wipe?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f9.iconColor }};-webkit-mask:url({{ f9.icon }}) center / contain no-repeat;mask:url({{ f9.icon }}) center / contain no-repeat"></span></button>
+        <sc-if value="{{ f9.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Senturo works alongside existing MDM platforms. Senturo Wipe provides its own recovery-focused data-removal workflow, while connected MDMs can continue handling their supported device-management actions.</p></sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="background:radial-gradient(ellipse 90% 70% at 50% 0%,#562CAD 0%,#2A1556 45%,#180B33 100%);color:#FFFFFF;position:relative;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:112px 32px 48px;display:flex;flex-direction:column;gap:72px">
+    <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;gap:28px"><h2 style="font-size:clamp(44px,6.4vw,92px);font-weight:800;letter-spacing:-0.045em;line-height:.98;color:#FFFFFF;text-align:center;text-wrap:balance">Know where every device is</h2><p style="font-size:19px;line-height:1.5;color:#D0BCF5;text-align:center;max-width:560px;text-wrap:pretty">Locate, secure, and recover your fleet from one dashboard. See it live with our team.</p><a href="book-demo.dc.html" target="_blank" rel="noopener" style="display:inline-flex"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="xl" right-icon="{{ arrowWhite }}" hint-size="200px,56px">Book a Demo</x-import></a></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.16)">
+      <img src="assets/logo-full-white.svg" alt="Senturo" style="height:32px;width:auto;display:block">
+      <span style="font-size:20px;font-weight:600;color:#FFFFFF">Device tracking, security &amp; recovery for IT teams</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:40px 32px">
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+          <h4 style="font-size:22px;font-weight:700;color:#FFFFFF;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.3);margin-bottom:12px">{{ col.title }}</h4>
+          <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="6">
+            <a href="{{ l.href }}" style-hover="color:#B59AEF;padding-left:6px" style="font-size:15px;color:#EDE6FB;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);display:block;transition:color .2s ease,padding-left .2s ease">{{ l.label }}</a>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;padding-top:48px;border-top:1px solid rgba(255,255,255,.16);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h4 style="font-size:24px;font-weight:700;color:#FFFFFF">Summarize Senturo with AI</h4>
+        <div style="display:flex;gap:18px">
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/asterisk.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/asterisk.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/aperture.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/aperture.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/sparkle.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/sparkle.svg) center / contain no-repeat"></span>
+          
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/orbit.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/orbit.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/hexagon.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/hexagon.svg) center / contain no-repeat"></span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
+        <h4 style="font-size:24px;font-weight:700;color:#FFFFFF">Security &amp; trust</h4>
+        <div style="display:flex;gap:20px;align-items:center">
+          <div style="width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat"></span><span style="font-size:12px;font-weight:700;color:#FFFFFF">SOC 2</span><span style="font-size:10px;color:#D0BCF5">Type I</span></div>
+          <div style="width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat"></span><span style="font-size:12px;font-weight:700;color:#FFFFFF">Encrypted</span><span style="font-size:10px;color:#D0BCF5">At rest &amp; in transit</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-end;text-align:right">
+        <h4 style="font-size:24px;font-weight:700;color:#FFFFFF">Follow us on</h4>
+        <div style="display:flex;gap:18px">
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/linkedin.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/linkedin.svg) center / contain no-repeat"></span>
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/youtube.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/youtube.svg) center / contain no-repeat"></span>
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/twitter.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/twitter.svg) center / contain no-repeat"></span>
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/facebook.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/facebook.svg) center / contain no-repeat"></span>
+        </div>
+        <p style="font-size:16px;color:#EDE6FB">Support: support@senturo.com<br>Mon–Fri, 9 a.m.–6 p.m. EST</p>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)">
+      <span style="font-size:14px;color:#D0BCF5">© 2026 Senturo. All rights reserved.</span>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="#" style-hover="color:#FFFFFF" style="font-size:14px;color:#D0BCF5">Privacy Policy</a>
+        <a href="#" style-hover="color:#FFFFFF" style="font-size:14px;color:#D0BCF5">Terms of Service</a>
+        <a href="#" style-hover="color:#FFFFFF" style="font-size:14px;color:#D0BCF5">Trust Center</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: { 0: true }, scrolled: false };
+  componentDidMount() {
+    this.onScroll = () => { const s = window.scrollY > 8; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    this.setupReveal();
+  }
+  componentDidUpdate() { this.setupReveal(); }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); if (this.io) this.io.disconnect(); }
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    if (!this.io) this.io = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { const el = e.target; el.style.opacity = '1'; el.style.transform = 'none'; el.setAttribute('data-revealed', '1'); this.io.unobserve(el); } }); }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('[data-reveal]:not([data-revealed])').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) { el.setAttribute('data-revealed', '1'); return; }
+      const t = el.style.transition || '';
+      el.style.transition = (t ? t + ',' : '') + 'opacity .8s cubic-bezier(.2,.7,.2,1)' + (t.includes('transform') ? '' : ',transform .8s cubic-bezier(.2,.7,.2,1)');
+      el.style.opacity = '0'; el.style.transform = 'translateY(28px)';
+      el.setAttribute('data-revealed', 'pending');
+      this.io.observe(el);
+    });
+  }
+  icon(name, color, size) {
+    const u = `url(https://unpkg.com/lucide-static@0.460.0/icons/${name}.svg) center / contain no-repeat`;
+    return React.createElement('span', { style: { display: 'inline-block', width: size, height: size, background: color, WebkitMask: u, mask: u } });
+  }
+  renderVals() {
+    const { open } = this.state;
+    const faq = i => ({ open: !!open[i], icon: `https://unpkg.com/lucide-static@0.460.0/icons/${open[i] ? 'circle-minus' : 'circle-plus'}.svg`, iconColor: open[i] ? '#8248E1' : '#CACACE', toggle: () => this.setState(s => ({ open: { ...s.open, [i]: !s.open[i] } })) });
+    const L = (label, href) => ({ label, href: href || '#' });
+    const fl = this.state.flipH, fp = this.state.flipP || {};
+    const flip = { leave: () => this.setState({ flipH: null }) };
+    for (let i = 0; i < 8; i++) { flip['e' + i] = () => this.setState({ flipH: i }); flip['c' + i] = () => this.setState(s => ({ flipP: Object.assign({}, s.flipP, { [i]: !(s.flipP || {})[i] }) })); flip['r' + i] = (fl === i || fp[i]) ? 'rotateY(180deg)' : 'rotateY(0deg)'; }
+    return {
+      flip,
+      featOpen: !!this.state.featOpen, featEnter: () => this.setState({ featOpen: true }), featLeave: () => this.setState({ featOpen: false }),
+      navShadow: this.state.scrolled ? '0 20px 40px -16px rgba(18,18,24,.22)' : '0 1px 3px rgba(18,18,24,.06)',
+      navBorder: this.state.scrolled ? 'rgba(18,18,24,.08)' : 'rgba(18,18,24,.05)',
+      arrowWhite: this.icon('arrow-right', '#FFFFFF', 14),
+      arrowPurple: this.icon('arrow-right', '#8248E1', 14),
+      f0: faq(0), f1: faq(1), f2: faq(2), f3: faq(3), f4: faq(4), f5: faq(5), f6: faq(6), f7: faq(7), f8: faq(8), f9: faq(9),
+      footerCols: [
+        { title: 'Product', links: ['Device Tracking','Missing Mode','Senturo Lock & Wipe','Broadcast Messages','Automations & Policies','Geofencing','Recovery Reports','Privacy-First Geotracking'].map(x => L(x)) },
+        { title: 'Solutions', links: [L('K-12 Schools'), L('Higher Education'), L('Business'), L('Healthcare'), L('Retail'), L('Field Teams'), L('Managed Service Providers', 'MSPs.dc.html')] },
+        { title: 'Integrations', links: ['Google Admin Console','Jamf Pro','Microsoft Intune','Cisco Meraki','Incident IQ','Device Enrollment'].map(x => L(x)) },
+        { title: 'Resources', links: ['Case Studies','Knowledge Base','Support Portal','Blog','Pricing','Login'].map(x => L(x)) },
+        { title: 'Company', links: [L('About Senturo'), L('Security & Trust Center'), L('Contact Sales', 'https://www.senturo.com/book-demo'), L('Careers'), L('Partners')] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

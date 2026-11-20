@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#8248E1"/><text x="50" y="66" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="44" fill="#fff">S</text></svg></template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
+<style>
+body{margin:0;background:#F0F0F2;color:#121218;font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#8248E1;text-decoration:none}a:hover{color:#6B38C8}
+</style>
+</helmet>
+<div style="display:flex;justify-content:center;padding:32px">
+  <div style="width:100%;max-width:1650px;aspect-ratio:1650/1275;position:relative;container-type:inline-size">
+    <div data-screen-label="Postcard back" style="position:absolute;inset:0;transform-origin:top left;transform:scale(calc(100cqw / 1650px));width:1650px;height:1275px;background:#FFFFFF;display:grid;grid-template-columns:940px 710px;box-shadow:0 20px 60px rgba(18,18,24,0.12);overflow:hidden">
+      <div style="padding:72px 80px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+        <img src="assets/logo-full.svg" alt="Senturo" style="height:60px;width:auto;align-self:flex-start">
+        <div style="display:flex;flex-direction:column;gap:32px">
+          <p style="margin:0;font-size:72px;font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:#121218">Hey {{ firstName }},</p>
+          <p style="margin:0;font-size:32px;line-height:1.45;font-weight:500;color:#121218;text-wrap:pretty">A missing device costs {{ company }} more than the price of its replacement when your IT team also has to spend hours looking for it. Senturo helps them follow its trail and manage the recovery from one place, reducing the work involved in getting it back.</p>
+          <p style="margin:0;font-size:32px;line-height:1.45;font-weight:500;color:#121218;text-wrap:pretty">Volusia County Schools saw a 6x return on their investment with Senturo.</p>
+          <p style="margin:0;font-size:32px;line-height:1.45;font-weight:700;color:#8248E1;text-wrap:pretty">Want to see how they do it? I’d love to offer you a free month of Senturo to test it yourself.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:36px;border-top:2px solid #E4E4E8;padding-top:44px">
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <span style="font-size:24px;font-weight:600;letter-spacing:-0.01em;color:#6E6E7A">Works with</span>
+            <div style="display:flex;align-items:center;gap:48px;height:52px">
+              <img src="https://cdn.simpleicons.org/googlechrome/8248E1" alt="Chrome OS" style="height:48px;width:48px">
+              <img src="https://cdn.simpleicons.org/apple/8248E1" alt="Apple" style="height:50px;width:50px">
+              <img src="https://cdn.simpleicons.org/android/8248E1" alt="Android" style="height:48px;width:48px">
+              <div aria-label="Windows" style="width:42px;height:42px;display:grid;grid-template-columns:1fr 1fr;gap:4px"><div style="background:#8248E1"></div><div style="background:#8248E1"></div><div style="background:#8248E1"></div><div style="background:#8248E1"></div></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <span style="font-size:24px;font-weight:600;letter-spacing:-0.01em;color:#6E6E7A">Integrates with</span>
+            <div style="display:flex;align-items:center;justify-content:space-between;height:52px">
+              <img src="assets/int/gadmin.png" alt="Google Admin" style="height:50px;width:auto">
+              <img src="assets/int/intune.png" alt="Microsoft Intune" style="height:26px;width:auto">
+              <img src="assets/int/jamf.png" alt="Jamf" style="height:34px;width:auto">
+              <img src="assets/int/iiq.png" alt="incidentIQ" style="height:50px;width:auto">
+              <img src="assets/int/meraki.png" alt="Cisco Meraki" style="height:30px;width:auto">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:72px 72px;display:flex;flex-direction:column;justify-content:space-between;gap:48px;background:#8248E1">
+        <div style="display:flex;flex-direction:column;gap:28px;flex:1">
+          <span style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#FFFFFF;line-height:1.1">What you get</span>
+          <div style="display:flex;flex-direction:column;flex:1;justify-content:space-between;gap:14px">
+            <div style="display:flex;align-items:center;gap:20px;padding:18px 24px;border-radius:16px;background:rgba(255,255,255,0.14)"><img src="https://unpkg.com/lucide-static@0.452.0/icons/map-pin.svg" alt="" style="width:36px;height:36px;filter:invert(1);flex-shrink:0"><span style="font-size:26px;font-weight:700;color:#FFFFFF;line-height:1.2">Missing mode with live location</span></div>
+            <div style="display:flex;align-items:center;gap:20px;padding:18px 24px;border-radius:16px;background:rgba(255,255,255,0.14)"><img src="https://unpkg.com/lucide-static@0.452.0/icons/lock.svg" alt="" style="width:36px;height:36px;filter:invert(1);flex-shrink:0"><span style="font-size:26px;font-weight:700;color:#FFFFFF;line-height:1.2">Remote lock</span></div>
+            <div style="display:flex;align-items:center;gap:20px;padding:18px 24px;border-radius:16px;background:rgba(255,255,255,0.14)"><img src="https://unpkg.com/lucide-static@0.452.0/icons/eraser.svg" alt="" style="width:36px;height:36px;filter:invert(1);flex-shrink:0"><span style="font-size:26px;font-weight:700;color:#FFFFFF;line-height:1.2">Remote wipe</span></div>
+            <div style="display:flex;align-items:center;gap:20px;padding:18px 24px;border-radius:16px;background:rgba(255,255,255,0.14)"><img src="https://unpkg.com/lucide-static@0.452.0/icons/megaphone.svg" alt="" style="width:36px;height:36px;filter:invert(1);flex-shrink:0"><span style="font-size:26px;font-weight:700;color:#FFFFFF;line-height:1.2">Broadcasting</span></div>
+            <div style="display:flex;align-items:center;gap:20px;padding:18px 24px;border-radius:16px;background:rgba(255,255,255,0.14)"><img src="https://unpkg.com/lucide-static@0.452.0/icons/radar.svg" alt="" style="width:36px;height:36px;filter:invert(1);flex-shrink:0"><span style="font-size:26px;font-weight:700;color:#FFFFFF;line-height:1.2">Geofencing</span></div>
+            <div style="display:flex;align-items:center;gap:20px;padding:18px 24px;border-radius:16px;background:rgba(255,255,255,0.14)"><img src="https://unpkg.com/lucide-static@0.452.0/icons/file-check.svg" alt="" style="width:36px;height:36px;filter:invert(1);flex-shrink:0"><span style="font-size:26px;font-weight:700;color:#FFFFFF;line-height:1.2">Audit-ready exports</span></div>
+            <div style="display:flex;align-items:center;gap:20px;padding:18px 24px;border-radius:16px;background:rgba(255,255,255,0.14)"><img src="https://unpkg.com/lucide-static@0.452.0/icons/camera.svg" alt="" style="width:36px;height:36px;filter:invert(1);flex-shrink:0"><span style="font-size:26px;font-weight:700;color:#FFFFFF;line-height:1.2">Screenshots when lost</span></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+          <a href="https://meetings.senturo.com/meetings/bjornh/discovery-call?uuid=eb353330-1416-46b8-a1bc-d14263d6adf9" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:16px;background:#FFFFFF;border-radius:24px;padding:22px 20px 24px">
+            <div ref="{{ qrCallRef }}" style="width:220px;height:220px;display:flex"></div>
+            <span style="font-size:22px;font-weight:800;color:#8248E1;letter-spacing:-0.01em;line-height:1;white-space:nowrap">Book a demo</span>
+          </a>
+          <a href="https://senturo.com" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:16px;background:#FFFFFF;border-radius:24px;padding:22px 20px 24px">
+            <div ref="{{ qrSiteRef }}" style="width:220px;height:220px;display:flex"></div>
+            <span style="font-size:22px;font-weight:800;color:#8248E1;letter-spacing:-0.01em;line-height:1;white-space:nowrap">senturo.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;firstName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;{{First Name}}&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Merge fields&quot;},&quot;company&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;{{Company}}&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Merge fields&quot;}}">
+class Component extends DCLogic {
+  callUrl = 'https://meetings.senturo.com/meetings/bjornh/discovery-call?uuid=eb353330-1416-46b8-a1bc-d14263d6adf9';
+  siteUrl = 'https://senturo.com';
+  qrCallRef = React.createRef();
+  qrSiteRef = React.createRef();
+  componentDidMount() { this.draw(); this._iv = setInterval(() => this.draw(), 800); }
+  componentWillUnmount() { clearInterval(this._iv); }
+  componentDidUpdate() { this.draw(); }
+  draw(tries = 0) {
+    if (typeof window.qrcode !== 'function') { if (tries < 40) setTimeout(() => this.draw(tries + 1), 150); return; }
+    this.paint(this.qrCallRef.current, this.callUrl);
+    this.paint(this.qrSiteRef.current, this.siteUrl);
+  }
+  paint(el, url) {
+    if (!el || el.firstChild) return;
+    const qr = window.qrcode(0, 'M'); qr.addData(url); qr.make();
+    const S = 220, n = qr.getModuleCount(), cell = S / n; let d = '';
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (qr.isDark(r, c)) d += `M${(c*cell).toFixed(2)} ${(r*cell).toFixed(2)}h${cell.toFixed(2)}v${cell.toFixed(2)}h-${cell.toFixed(2)}z`;
+    el.innerHTML = `<svg width="${S}" height="${S}" viewBox="0 0 ${S} ${S}" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><path d="${d}" fill="#121218"/></svg>`;
+  }
+  renderVals() {
+    return { qrCallRef: this.qrCallRef, qrSiteRef: this.qrSiteRef, firstName: this.props.firstName ?? '{{First Name}}', company: this.props.company ?? '{{Company}}' };
+  }
+}
+</script>
+</body>
+</html>

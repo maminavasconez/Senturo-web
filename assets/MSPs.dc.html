@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="assets/ds/styles.css">
+<script src="assets/ds/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:#FFFFFF;color:#121218;font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#8248E1;text-decoration:none}a:hover{color:#6B38C8}
+p,h1,h2,h3,h4{margin:0}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+
+<div data-screen-label="MSP" style="width:100%;min-width:0;overflow-x:clip">
+
+<div style="position:sticky;top:12px;z-index:200;display:flex;justify-content:center;padding:0 16px">
+  <header style="max-width:1180px;width:100%;display:flex;align-items:center;gap:28px;padding:8px 8px 8px 20px;border-radius:9999px;background:rgba(255,255,255,.72);backdrop-filter:blur(18px);border:1px solid {{ navBorder }};box-shadow:{{ navShadow }};transition:box-shadow .25s ease,border-color .25s ease">
+    <a href="Senturo Homepage v3.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/logo-full.svg" alt="Senturo" style="height:26px;width:auto;display:block"></a>
+    <nav style="display:flex;align-items:center;gap:4px;flex:1;min-width:0;flex-wrap:wrap">
+      <a href="Senturo Homepage v3.dc.html#platform" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Platform<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+      <div onMouseEnter="{{ featEnter }}" onMouseLeave="{{ featLeave }}" style="position:relative">
+        <a href="Features.dc.html" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Features<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+        <sc-if value="{{ featOpen }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;top:100%;left:0;padding-top:10px;z-index:300;animation:fadeUp .2s ease-out both"><div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 20px 40px -16px rgba(18,18,24,.22);padding:8px;min-width:250px;display:flex;flex-direction:column;gap:2px">
+          <a href="Features.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#3E3E4A;background:transparent;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/layout-grid.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/layout-grid.svg) center / contain no-repeat"></span>Features overview</a>
+          <a href="Missing Mode.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#3E3E4A;background:transparent;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat"></span>Missing Mode</a>
+          <a href="Remote Lock.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#3E3E4A;background:transparent;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat"></span>Senturo Lock</a>
+          <a href="Remote Wipe.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#3E3E4A;background:transparent;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat"></span>Remote Wipe</a>
+          <a href="Broadcasting.dc.html" style-hover="background:#F5F0FD;color:#562CAD" style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#3E3E4A;background:transparent;padding:10px 12px;border-radius:10px;transition:background .2s ease,color .2s ease"><span style="width:16px;height:16px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat"></span>Broadcast Messaging</a>
+        </div></div></sc-if>
+      </div>
+      <a href="Senturo Homepage v3.dc.html#integrations" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Integrations<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+      <a href="MSPs.dc.html" style="font-size:14px;font-weight:600;color:#562CAD;background:#F5F0FD;padding:8px 12px;border-radius:9999px">MSPs</a>
+      <a href="Senturo Homepage v3.dc.html#stories" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Company<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+      <a href="Senturo Homepage v3.dc.html#faq" style-hover="background:#F0F0F2;color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Our Data</a>
+      <a href="price-request.dc.html" style-hover="background:#F0F0F2;color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Pricing</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <a href="#" style-hover="color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;transition:color .2s ease">Login</a>
+      <a href="book-demo.dc.html" target="_blank" rel="noopener" style="display:inline-flex"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="md" right-icon="{{ arrowWhite }}" hint-size="150px,40px">Book a Demo</x-import></a>
+    </div>
+  </header>
+</div>
+
+<section data-screen-label="Hero" style="margin-top:-68px;padding-top:68px;background:radial-gradient(ellipse 55% 60% at 78% 30%,rgba(130,72,225,.24) 0%,rgba(130,72,225,0) 70%),radial-gradient(ellipse 40% 40% at 10% 90%,rgba(130,72,225,.08) 0%,rgba(130,72,225,0) 70%),#F8F8F9;position:relative;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:112px 32px 136px;position:relative">
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:36px;min-width:0;animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) both">
+      <h1 style="font-size:clamp(44px,5.6vw,80px);font-weight:800;letter-spacing:-0.045em;line-height:1;color:#121218;text-wrap:balance;text-align:center">Better device <span style="color:#562CAD">visibility</span>.<br>Better <span style="color:#562CAD">client service</span></h1>
+      <div style="display:flex;flex-direction:column;gap:20px;font-size:clamp(17px,1.4vw,20px);line-height:1.65;color:#000000;text-wrap:pretty">
+        <p style="font-size:clamp(20px,1.9vw,26px);font-weight:600;color:#3E3E4A;line-height:1.45">Get complete visibility of the device fleets you manage, with security and privacy built in. Senturo gives you a clear view across Windows, macOS, iOS, Android and ChromeOS, helping you keep track of every device in your client base.</p>
+        <p>Senturo fits seamlessly into the way you and your clients already work, with no extra hassle. Simply connect Senturo with the MDM your clients already use, which includes Microsoft Intune, Google Admin Console, Jamf, Google Admin, Cisco Meraki and Incident IQ. No MDM? No problem. Use Senturo without it. Just assign user roles and get clear, centralized device visibility across all the fleets you manage, at scale.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center">
+        <a href="book-demo.dc.html" target="_blank" rel="noopener" style="display:inline-flex"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="xl" right-icon="{{ arrowWhite }}" hint-size="190px,56px">Book a demo</x-import></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Use cases" style="background: #FFFFFF">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 48px 32px 120px; display: flex; flex-direction: column; gap: 64px">
+    
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 18px; align-items: center; text-align: center; width: 1160px; height: 287px">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Use cases</span>
+      <h2 style="font-size: clamp(36px,4.8vw,64px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: #121218; text-wrap: balance; max-width: 900px; width: 899px; height: 253px">Be ready for whatever your clients need</h2>
+      <p style="font-size: clamp(18px,1.6vw,22px); font-weight: 600; color: #3E3E4A; line-height: 1.45; max-width: 760px; text-wrap: pretty; width: 758px; height: 137px">Senturo gives your team the visibility and recovery tools to act fast, resolve problems quickly and give your clients an even stronger service they can count on.</p>
+    </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/square-user.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/square-user.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">See all your clients in one clear view</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Monitor devices, locations, and activity for all your client fleets from a single dashboard. Easily organize devices with tags and groups so you can find what you need anytime.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/search.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/search.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Find missing devices faster</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Device gone missing? Track it down fast: review its latest location, location history, recent activity, and its last logged-in user. Give your team the information they need to deploy the right recovery action.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Get alerts when a device leaves an approved area</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Create geofences around offices, schools and other approved locations, then configure alerts and automated actions to help your team respond when a device moves beyond its designated boundary.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-text.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-text.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Build a complete recovery record</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Export detailed reports of devices, users, dates, and locations, giving your clients clear, organized evidence to support internal investigations, insurance claims or law enforcement enquiries.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Protect devices, wherever the work happens</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Give your clients visibility into company-owned devices wherever they’re used. Set up automation policies to maintain compliance, whether their teams work remotely, in the office, or on the move.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);border-color:#D0BCF5;box-shadow:0 20px 25px -5px rgba(18,18,24,.10)" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease">
+        <span style="width:48px;height:48px;border-radius:14px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/rotate-ccw.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/rotate-ccw.svg) center / contain no-repeat"></span></span>
+        <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-wrap:balance">Simplify secure employee offboarding</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Keep track of devices assigned to departing employees, and help your clients manage the return process. If a device isn’t returned, your team can quickly start the recovery process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Logo wall" style="border-top:1px solid #F0F0F2;border-bottom:1px solid #F0F0F2">
+  <div style="max-width:1240px;margin:0 auto;padding:56px 32px;display:flex;flex-direction:column;gap:28px;align-items:center">
+    <h2 style="font-size:clamp(18px,2.2vw,28px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-align:center">Trusted by 1600+ clients in 30 states and 12 industries</h2>
+    <div style="width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)"><div style="display:flex;align-items:center;gap:72px;width:max-content;padding-right:72px;animation:marquee 40s linear infinite"><img src="assets/k12/school-logos.png" alt="Senturo customers" style="height:56px;width:auto;display:block;flex:none"><img src="assets/k12/school-logos.png" alt="Senturo customers" style="height:56px;width:auto;display:block;flex:none"></div></div>
+  </div>
+</section>
+
+<section data-screen-label="Integrations" id="integrations" style="background:#F8F8F9">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:48px;align-items:center;text-align:center">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Integrations</span>
+      <h2 style="font-size: clamp(36px,4.8vw,64px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: #121218; text-wrap: balance; max-width: 900px; width: 900px; height: 163px">Works with the tools your clients already use</h2>
+      <p style="font-size:18px;color:#5E5E6A;line-height:1.6;max-width:760px;text-wrap:pretty">Microsoft Intune, Jamf, Google Admin Console, Cisco Meraki and Incident IQ</p>
+    </div>
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;width:100%;max-width:1120px">
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/intune.png" alt="Microsoft Intune" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/jamf.png" alt="Jamf" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/gadmin.png" alt="Google Admin Console" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/meraki.png" alt="Cisco Meraki" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+      <div style="flex:0 1 200px;min-width:160px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);height:104px;padding:20px 24px;display:flex;align-items:center;justify-content:center"><img src="assets/int/iiq.png" alt="Incident IQ" style="max-height:44px;max-width:100%;width:auto;display:block"></div>
+    </div>
+    <p data-reveal="" style="display:inline-flex;align-items:center;gap:8px;background:#F5F0FD;color:#562CAD;font-size:16px;font-weight:600;padding:12px 20px;border-radius:999px;line-height:1.3">No MDM? No problem. Senturo works without one, too.</p>
+  </div>
+</section>
+
+<section data-screen-label="Social proof" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px 0">
+    <div data-reveal="" style="border:1.5px dashed #CACACE;border-radius:28px;background:repeating-linear-gradient(135deg,#F8F8F9 0 12px,#F3F3F5 12px 24px);padding:64px 48px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#5E5E6A">Placeholder · Social proof</span>
+      <p style="font-size:clamp(24px,2.6vw,36px);font-weight:700;letter-spacing:-0.02em;line-height:1.25;color:#3E3E4A;max-width:820px">“Senturo .....”</p>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#848490">Quote · name · role · company</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Feature list" id="platform" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Features</span>
+      <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-wrap:balance;max-width:900px">Monitor, manage and protect all your fleets</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px">
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:20px;height:20px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/layout-dashboard.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/layout-dashboard.svg) center / contain no-repeat"></span><h3 style="font-size:17px;font-weight:700;color:#121218;letter-spacing:-0.01em">Fleet visibility</h3></div>
+        <p style="font-size:15px;line-height:1.55;color:#5E5E6A;text-wrap:pretty">View devices, locations and users across every client from one dashboard.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:20px;height:20px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map.svg) center / contain no-repeat"></span><h3 style="font-size:17px;font-weight:700;color:#121218;letter-spacing:-0.01em">Geofencing</h3></div>
+        <p style="font-size:15px;line-height:1.55;color:#5E5E6A;text-wrap:pretty">Never miss a device leaving a pre-approved area - or entering a forbidden one.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:20px;height:20px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/zap.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/zap.svg) center / contain no-repeat"></span><h3 style="font-size:17px;font-weight:700;color:#121218;letter-spacing:-0.01em">Automated security</h3></div>
+        <p style="font-size:15px;line-height:1.55;color:#5E5E6A;text-wrap:pretty">Trigger security responses based on device location or status.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:20px;height:20px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/key-round.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/key-round.svg) center / contain no-repeat"></span><h3 style="font-size:17px;font-weight:700;color:#121218;letter-spacing:-0.01em">Remote lock and wipe</h3></div>
+        <p style="font-size:15px;line-height:1.55;color:#5E5E6A;text-wrap:pretty">Secure devices and remove sensitive data remotely.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:20px;height:20px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/camera.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/camera.svg) center / contain no-repeat"></span><h3 style="font-size:17px;font-weight:700;color:#121218;letter-spacing:-0.01em">Missing Mode screenshots</h3></div>
+        <p style="font-size:15px;line-height:1.55;color:#5E5E6A;text-wrap:pretty">Take screenshots to help recovery investigations.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:20px;height:20px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-down.svg) center / contain no-repeat"></span><h3 style="font-size:17px;font-weight:700;color:#121218;letter-spacing:-0.01em">Exportable records</h3></div>
+        <p style="font-size:15px;line-height:1.55;color:#5E5E6A;text-wrap:pretty">Create detailed fleet reports with device, user and location data.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:20px;height:20px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat"></span><h3 style="font-size:17px;font-weight:700;color:#121218;letter-spacing:-0.01em">Broadcasting</h3></div>
+        <p style="font-size:15px;line-height:1.55;color:#5E5E6A;text-wrap:pretty">Schedule custom messages or device return instructions.</p>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:20px;height:20px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/code.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/code.svg) center / contain no-repeat"></span><h3 style="font-size:17px;font-weight:700;color:#121218;letter-spacing:-0.01em">API access</h3></div>
+        <p style="font-size:15px;line-height:1.55;color:#5E5E6A;text-wrap:pretty">Connect Senturo to the tools and systems you already use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Access and privacy" style="background:#F8F8F9;border-top:1px solid #F0F0F2;border-bottom:1px solid #F0F0F2">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Access &amp; privacy</span>
+      <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#562CAD;text-wrap:balance;max-width:900px">Manage sensitive device data with confidence</h2>
+      <p style="font-size:18px;color:#5E5E6A;line-height:1.6;max-width:760px;text-wrap:pretty">Control admin access to location information, fleet settings and recovery tools.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+      <div data-reveal="" style-hover="transform:scale(1.03);border-color:#D0BCF5" style="background:#2A1556;border:1px solid #2A1556;border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease;position:relative;overflow:hidden"><span style="position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.35),rgba(130,72,225,0) 70%);pointer-events:none"></span>
+        <span style="width:24px;height:24px;background:#FFFFFF;position:relative;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/users.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/users.svg) center / contain no-repeat"></span>
+        <h3 style="font-size:24px;font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-top:auto;color:#FFFFFF;position:relative">Role-based access</h3>
+        <p style="font-size:15px;line-height:1.55;color:#FFFFFF;position:relative;text-wrap:pretty">Choose who in your team can view devices, manage settings or activate recovery features.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:scale(1.03);border-color:#D0BCF5" style="background:#2A1556;border:1px solid #2A1556;border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease;position:relative;overflow:hidden"><span style="position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.35),rgba(130,72,225,0) 70%);pointer-events:none"></span>
+        <span style="width:24px;height:24px;background:#FFFFFF;position:relative;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye-off.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye-off.svg) center / contain no-repeat"></span>
+        <h3 style="font-size:24px;font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-top:auto;color:#FFFFFF;position:relative">Flexible privacy modes</h3>
+        <p style="font-size:15px;line-height:1.55;color:#FFFFFF;position:relative;text-wrap:pretty">Configure location visibility in line with each of your client’s privacy and operational requirements.</p>
+      </div>
+      <div data-reveal="" style-hover="transform:scale(1.03);border-color:#D0BCF5" style="background:#2A1556;border:1px solid #2A1556;border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:240px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease;position:relative;overflow:hidden"><span style="position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.35),rgba(130,72,225,0) 70%);pointer-events:none"></span>
+        <span style="width:24px;height:24px;background:#FFFFFF;position:relative;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat"></span>
+        <h3 style="font-size:24px;font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-top:auto;color:#FFFFFF;position:relative">Controlled recovery access</h3>
+        <p style="font-size:15px;line-height:1.55;color:#FFFFFF;position:relative;text-wrap:pretty">Limit sensitive actions such as Missing Mode, remote lock and remote wipe to authorized users.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="How it works" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Setup steps</span>
+      <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218">How it works</h2>
+      <p style="font-size:18px;color:#5E5E6A;line-height:1.6;max-width:760px;text-wrap:pretty">Simply connect Senturo to your clients’ systems to manage device visibility from one place.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+      <div data-reveal="" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;padding:40px 32px;display:flex;flex-direction:column;gap:18px">
+        <span style="width:52px;height:52px;border-radius:50%;background:#8248E1;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800">1</span>
+        <h3 style="font-size:24px;font-weight:800;letter-spacing:-0.03em;line-height:1.15;color:#121218">Add a client</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Connect to their existing MDM: this includes Microsoft Intune, Jamf, Google Admin, Cisco Meraki or Incident IQ. Senturo also works without an MDM.</p>
+      </div>
+      <div data-reveal="" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;padding:40px 32px;display:flex;flex-direction:column;gap:18px">
+        <span style="width:52px;height:52px;border-radius:50%;background:#8248E1;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800">2</span>
+        <h3 style="font-size:24px;font-weight:800;letter-spacing:-0.03em;line-height:1.15;color:#121218">Configure their fleet</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Import devices, organize them with groups and tags, assign user roles and tailor location, security and recovery policies to your client’s requirements.</p>
+      </div>
+      <div data-reveal="" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;padding:40px 32px;display:flex;flex-direction:column;gap:18px">
+        <span style="width:52px;height:52px;border-radius:50%;background:#8248E1;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800">3</span>
+        <h3 style="font-size:24px;font-weight:800;letter-spacing:-0.03em;line-height:1.15;color:#121218">Manage and expand</h3>
+        <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Monitor their fleet, respond fast to device incidents and easily add more clients as your service grows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="CTA" id="demo" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px 120px">
+    <div data-reveal="" style="background:radial-gradient(ellipse 90% 60% at 100% 0%,#562CAD,#2A1556 60%);border:1px solid #2A1556;border-radius:28px;padding:80px 48px;display:flex;flex-direction:column;gap:24px;align-items:center;text-align:center">
+      <h2 style="font-size:clamp(32px,3.6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:#FFFFFF;text-wrap:balance;max-width:900px">Offer more to your clients with device visibility</h2>
+      <p style="font-size:18px;line-height:1.6;color:#D0BCF5;max-width:640px;text-wrap:pretty">Find out how Senturo works with different types of clients, MDMs and operating systems.</p>
+      <a href="book-demo.dc.html" target="_blank" rel="noopener" style="display:inline-flex;padding-top:8px"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="xl" right-icon="{{ arrowWhite }}" hint-size="220px,56px">Book a demo now</x-import></a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="FAQ" id="faq" style="background:#F8F8F9">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <h2 data-reveal="" style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-align:center">Frequently asked questions</h2>
+    <div style="width:100%;max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:24px;min-width:0">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+            <button onClick="{{ f0.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Does Senturo replace the MDM my client already uses?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f0.iconColor }};-webkit-mask:url({{ f0.icon }}) center / contain no-repeat;mask:url({{ f0.icon }}) center / contain no-repeat"></span></button>
+            <sc-if value="{{ f0.open }}" hint-placeholder-val="{{ true }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Not at all. Senturo doesn’t replace MDMs, but rather works with them, currently supporting Microsoft Intune, Jamf, Google Admin, Cisco Meraki and Incident IQ. And you don’t need an MDM, as Senturo works without one, too.</p></sc-if>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+            <button onClick="{{ f1.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Can we manage multiple client fleets?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f1.iconColor }};-webkit-mask:url({{ f1.icon }}) center / contain no-repeat;mask:url({{ f1.icon }}) center / contain no-repeat"></span></button>
+            <sc-if value="{{ f1.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Yes, of course. It’s easy to manage fleets of devices across multiple clients. Simply use the groups and tags features to keep each client and fleet organized.</p></sc-if>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+            <button onClick="{{ f2.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Which operating systems are supported?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f2.iconColor }};-webkit-mask:url({{ f2.icon }}) center / contain no-repeat;mask:url({{ f2.icon }}) center / contain no-repeat"></span></button>
+            <sc-if value="{{ f2.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Senturo works with Windows, macOS, iOS, Android and ChromeOS. <a href="https://support.senturo.com/knowledge-base/integrations" target="_blank" rel="noopener" style="color:#8248E1;font-weight:600;text-decoration:underline;text-underline-offset:3px">Specific capabilities may vary by operating system.</a></p></sc-if>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+            <button onClick="{{ f3.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Can we control who sees what?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f3.iconColor }};-webkit-mask:url({{ f3.icon }}) center / contain no-repeat;mask:url({{ f3.icon }}) center / contain no-repeat"></span></button>
+            <sc-if value="{{ f3.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Absolutely. Senturo’s user roles feature lets you choose who can access device information, location data, fleet settings and sensitive recovery actions.</p></sc-if>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+            <button onClick="{{ f4.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">Can we start with just one client?<span style="width:26px;height:26px;flex-shrink:0;background:{{ f4.iconColor }};-webkit-mask:url({{ f4.icon }}) center / contain no-repeat;mask:url({{ f4.icon }}) center / contain no-repeat"></span></button>
+            <sc-if value="{{ f4.open }}" hint-placeholder-val="{{ false }}"><div style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty;display:flex;flex-direction:column;gap:12px"><p>Of course. We all start with one client! Just add your first client and add more fleets as demand grows.</p><p>Also, lots of our customers start by piloting a single client to get a feel for Senturo, and then add on the rest of their client base once they’ve seen how it works and how useful it is in real life.</p></div></sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="background:radial-gradient(ellipse 90% 70% at 50% 0%,#562CAD 0%,#2A1556 45%,#180B33 100%);color:#FFFFFF;position:relative;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:112px 32px 48px;display:flex;flex-direction:column;gap:72px">
+    <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;gap:28px"><h2 style="font-size:clamp(44px,6.4vw,92px);font-weight:800;letter-spacing:-0.045em;line-height:.98;color:#FFFFFF;text-align:center;text-wrap:balance">Know where every device is</h2><p style="font-size:19px;line-height:1.5;color:#D0BCF5;text-align:center;max-width:560px;text-wrap:pretty">Locate, secure, and recover your fleet from one dashboard. See it live with our team.</p><a href="book-demo.dc.html" target="_blank" rel="noopener" style="display:inline-flex"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="xl" right-icon="{{ arrowWhite }}" hint-size="200px,56px">Book a Demo</x-import></a></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.16)">
+      <img src="assets/logo-full-white.svg" alt="Senturo" style="height:32px;width:auto;display:block">
+      <span style="font-size:20px;font-weight:600;color:#FFFFFF">Device tracking, security &amp; recovery for IT teams</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:40px 32px">
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+          <h4 style="font-size:22px;font-weight:700;color:#FFFFFF;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.3);margin-bottom:12px">{{ col.title }}</h4>
+          <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="6">
+            <a href="{{ l.href }}" style-hover="color:#B59AEF;padding-left:6px" style="font-size:15px;color:#EDE6FB;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);display:block;transition:color .2s ease,padding-left .2s ease">{{ l.label }}</a>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;padding-top:48px;border-top:1px solid rgba(255,255,255,.16);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h4 style="font-size:24px;font-weight:700;color:#FFFFFF">Summarize Senturo with AI</h4>
+        <div style="display:flex;gap:18px">
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/asterisk.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/asterisk.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/aperture.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/aperture.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/sparkle.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/sparkle.svg) center / contain no-repeat"></span>
+          
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/orbit.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/orbit.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/hexagon.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/hexagon.svg) center / contain no-repeat"></span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
+        <h4 style="font-size:24px;font-weight:700;color:#FFFFFF">Security &amp; trust</h4>
+        <div style="display:flex;gap:20px;align-items:center">
+          <div style="width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat"></span><span style="font-size:12px;font-weight:700;color:#FFFFFF">SOC 2</span><span style="font-size:10px;color:#D0BCF5">Type I</span></div>
+          <div style="width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat"></span><span style="font-size:12px;font-weight:700;color:#FFFFFF">Encrypted</span><span style="font-size:10px;color:#D0BCF5">At rest &amp; in transit</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-end;text-align:right">
+        <h4 style="font-size:24px;font-weight:700;color:#FFFFFF">Follow us on</h4>
+        <div style="display:flex;gap:18px">
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/linkedin.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/linkedin.svg) center / contain no-repeat"></span>
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/youtube.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/youtube.svg) center / contain no-repeat"></span>
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/twitter.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/twitter.svg) center / contain no-repeat"></span>
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/facebook.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/facebook.svg) center / contain no-repeat"></span>
+        </div>
+        <p style="font-size:16px;color:#EDE6FB">Support: support@senturo.com<br>Mon–Fri, 9 a.m.–6 p.m. EST</p>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)">
+      <span style="font-size:14px;color:#D0BCF5">© 2026 Senturo. All rights reserved.</span>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="#" style-hover="color:#FFFFFF" style="font-size:14px;color:#D0BCF5">Privacy Policy</a>
+        <a href="#" style-hover="color:#FFFFFF" style="font-size:14px;color:#D0BCF5">Terms of Service</a>
+        <a href="#" style-hover="color:#FFFFFF" style="font-size:14px;color:#D0BCF5">Trust Center</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: { 0: true }, scrolled: false };
+  componentDidMount() {
+    this.onScroll = () => { const s = window.scrollY > 8; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    this.setupReveal();
+  }
+  componentDidUpdate() { this.setupReveal(); }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); if (this.io) this.io.disconnect(); }
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    if (!this.io) this.io = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { const el = e.target; el.style.opacity = '1'; el.style.transform = 'none'; el.setAttribute('data-revealed', '1'); this.io.unobserve(el); } }); }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('[data-reveal]:not([data-revealed])').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) { el.setAttribute('data-revealed', '1'); return; }
+      const t = el.style.transition || '';
+      el.style.transition = (t ? t + ',' : '') + 'opacity .8s cubic-bezier(.2,.7,.2,1)' + (t.includes('transform') ? '' : ',transform .8s cubic-bezier(.2,.7,.2,1)');
+      el.style.opacity = '0'; el.style.transform = 'translateY(28px)';
+      el.setAttribute('data-revealed', 'pending');
+      this.io.observe(el);
+    });
+  }
+  icon(name, color, size) {
+    const u = `url(https://unpkg.com/lucide-static@0.460.0/icons/${name}.svg) center / contain no-repeat`;
+    return React.createElement('span', { style: { display: 'inline-block', width: size, height: size, background: color, WebkitMask: u, mask: u } });
+  }
+  renderVals() {
+    const { open } = this.state;
+    const faq = i => ({ open: !!open[i], icon: `https://unpkg.com/lucide-static@0.460.0/icons/${open[i] ? 'circle-minus' : 'circle-plus'}.svg`, iconColor: open[i] ? '#8248E1' : '#CACACE', toggle: () => this.setState(s => ({ open: { ...s.open, [i]: !s.open[i] } })) });
+    const L = (label, href) => ({ label, href: href || '#' });
+    return {
+      featOpen: !!this.state.featOpen, featEnter: () => this.setState({ featOpen: true }), featLeave: () => this.setState({ featOpen: false }),
+      navShadow: this.state.scrolled ? '0 20px 40px -16px rgba(18,18,24,.22)' : '0 1px 3px rgba(18,18,24,.06)',
+      navBorder: this.state.scrolled ? 'rgba(18,18,24,.08)' : 'rgba(18,18,24,.05)',
+      arrowWhite: this.icon('arrow-right', '#FFFFFF', 14),
+      f0: faq(0), f1: faq(1), f2: faq(2), f3: faq(3), f4: faq(4),
+      footerCols: [
+        { title: 'Product', links: ['Device Tracking','Missing Mode','Senturo Lock & Wipe','Broadcast Messages','Automations & Policies','Geofencing','Recovery Reports','Privacy-First Geotracking'].map(x => L(x)) },
+        { title: 'Solutions', links: [L('K-12 Schools'), L('Higher Education'), L('Business'), L('Healthcare'), L('Retail'), L('Field Teams'), L('Managed Service Providers', 'MSPs.dc.html')] },
+        { title: 'Integrations', links: ['Google Admin Console','Jamf Pro','Microsoft Intune','Cisco Meraki','Incident IQ','Device Enrollment'].map(x => L(x)) },
+        { title: 'Resources', links: ['Case Studies','Knowledge Base','Support Portal','Blog','Pricing','Login'].map(x => L(x)) },
+        { title: 'Company', links: [L('About Senturo'), L('Security & Trust Center'), L('Contact Sales', 'https://www.senturo.com/book-demo'), L('Careers'), L('Partners')] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

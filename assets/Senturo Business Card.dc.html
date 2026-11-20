@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
+<style>
+body{margin:0;background:#F0F0F2;color:#121218;font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#8248E1;text-decoration:none}a:hover{color:#6B38C8}
+p,h1,h2,h3{margin:0}
+</style>
+</helmet>
+<div style="display:flex;flex-direction:column;gap:40px;padding:64px;width:max-content"><p style="font-size:14px;line-height:1.5;color:#3E3E4A;max-width:720px">Each card is 1125 × 675 px = 3.75 × 2.25 in at 300 dpi. Outer 0.125 in is bleed (trimmed off). Content sits inside the 0.125 in safe area. Turn on <strong>guides</strong> in Tweaks to see trim (red) and safe area (green).</p><div style="display:flex;gap:64px;align-items:flex-start">
+<div data-screen-label="Björn" style="display:flex;flex-direction:column;gap:48px">
+  <!-- FRONT · 3.5in × 2in at 300dpi -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6B6B78">Björn · Front · 3.75 × 2.25 in with bleed · trim 3.5 × 2</span>
+    <div data-screen-label="Front" style="width:1125px;height:675px;background:#FFFFFF;padding:109.5px 117.5px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(18,18,24,.10)"><sc-if value="{{ guides }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:37.5px;border:1px dashed #E5484D;pointer-events:none;z-index:5"></div><div style="position:absolute;inset:93.5px;border:1px dashed #30A46C;pointer-events:none;z-index:5"></div></sc-if>
+      <!-- oversized logo mark bleeding off the right edge, echoing the concentric-arc mark -->
+      <img src="assets/logo-icon.svg" alt="" style="position:absolute;right:-292.5px;top:-152.5px;width:980px;height:980px;opacity:.07;pointer-events:none">
+      <div style="position:absolute;right:-292.5px;top:-152.5px;width:980px;height:980px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.10) 0%,rgba(130,72,225,0) 62%);pointer-events:none"></div>
+            <img src="assets/logo-full-purple.svg" alt="Senturo" style="height:84px;width:auto;display:block;align-self:flex-start;position:relative">
+      <div style="display:flex;flex-direction:column;gap:22px;position:relative">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <h1 style="font-size:72px;font-weight:800;letter-spacing:-0.045em;line-height:1;color:#121218">Björn Hall</h1>
+          <p style="font-size:28px;font-weight:600;color:#562CAD;letter-spacing:-0.01em">CEO</p>
+        </div>
+        <div style="display:flex;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:baseline;gap:10px">
+              <a href="tel:+447711807461" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap;font-variant-numeric:tabular-nums">+44 7711 807461</a>
+              <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8248E1">UK</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" style="display:block;align-self:center" aria-label="WhatsApp"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:10px">
+              <a href="tel:+13072182357" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap;font-variant-numeric:tabular-nums">+1 (307) 218-2357</a>
+              <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8248E1">Work</span>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:10px">
+              <a href="tel:+15032909780" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap;font-variant-numeric:tabular-nums">+1 (503) 290-9780</a>
+              <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8248E1">US mobile</span>
+            </div>
+            <a href="mailto:bjornh@senturo.com" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap">bjornh@senturo.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BACK -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6B6B78">Björn · Back · 3.75 × 2.25 in with bleed · trim 3.5 × 2</span>
+    <div data-screen-label="Back" style="width:1125px;height:675px;background:#562CAD;padding:101.5px 109.5px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(18,18,24,.18)"><sc-if value="{{ guides }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:37.5px;border:1px dashed #E5484D;pointer-events:none;z-index:5"></div><div style="position:absolute;inset:93.5px;border:1px dashed #30A46C;pointer-events:none;z-index:5"></div></sc-if>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px">
+        <img src="assets/logo-full-white.svg" alt="Senturo" style="height:60px;width:auto;display:block;filter:brightness(0) invert(1)">
+        <div style="display:flex;gap:40px;text-align:right">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;opacity:.7">US</span>
+            <p style="font-size:16px;font-weight:600;color:#FFFFFF;line-height:1.4">30 N Gould St, Ste 24743<br>Sheridan, WY 82801</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;opacity:.7">UK</span>
+            <p style="font-size:16px;font-weight:600;color:#FFFFFF;line-height:1.4">86-90 Paul Street<br>London EC2A 4NE</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px">
+        <h2 style="font-size:56px;font-weight:800;letter-spacing:-0.04em;line-height:1.08;color:#FFFFFF;white-space:nowrap">Every device,<br>accounted for.</h2>
+        <div style="display:flex;gap:24px;flex-shrink:0;align-items:flex-end">
+          <a href="https://meetings.senturo.com/meetings/bjornh/discovery-call?uuid=eb353330-1416-46b8-a1bc-d14263d6adf9" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+            <div style="background:#FFFFFF;border-radius:18px;padding:14px;display:flex"><div ref="{{ qrCallRef }}" style="width:172px;height:172px;display:flex"></div></div>
+            <span style="font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em">Book a call</span>
+          </a>
+          <a href="https://senturo.com" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+            <div style="background:#FFFFFF;border-radius:18px;padding:14px;display:flex"><div ref="{{ qrSiteRef }}" style="width:172px;height:172px;display:flex"></div></div>
+            <span style="font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em">senturo.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div data-screen-label="Noson" style="display:flex;flex-direction:column;gap:48px">
+  <!-- FRONT · 3.5in × 2in at 300dpi -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6B6B78">Noson · Front · 3.75 × 2.25 in with bleed · trim 3.5 × 2</span>
+    <div data-screen-label="Noson Front" style="width:1125px;height:675px;background:#FFFFFF;padding:109.5px 117.5px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(18,18,24,.10)"><sc-if value="{{ guides }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:37.5px;border:1px dashed #E5484D;pointer-events:none;z-index:5"></div><div style="position:absolute;inset:93.5px;border:1px dashed #30A46C;pointer-events:none;z-index:5"></div></sc-if>
+      <!-- oversized logo mark bleeding off the right edge, echoing the concentric-arc mark -->
+      <img src="assets/logo-icon.svg" alt="" style="position:absolute;right:-292.5px;top:-152.5px;width:980px;height:980px;opacity:.07;pointer-events:none">
+      <div style="position:absolute;right:-292.5px;top:-152.5px;width:980px;height:980px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.10) 0%,rgba(130,72,225,0) 62%);pointer-events:none"></div>
+            <img src="assets/logo-full-purple.svg" alt="Senturo" style="height:84px;width:auto;display:block;align-self:flex-start;position:relative">
+      <div style="display:flex;flex-direction:column;gap:22px;position:relative">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <h1 style="font-size:72px;font-weight:800;letter-spacing:-0.045em;line-height:1;color:#121218">Noson Rabinovich</h1>
+          <p style="font-size:28px;font-weight:600;color:#562CAD;letter-spacing:-0.01em">Customer Success Engineer</p>
+        </div>
+        <div style="display:flex;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:baseline;gap:10px"><a href="tel:+18455385434" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap;font-variant-numeric:tabular-nums">+1 (845) 538-5434</a><span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8248E1">Mobile</span></div><div style="display:flex;align-items:baseline;gap:10px"><a href="tel:+13072182357" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap;font-variant-numeric:tabular-nums">+1 (307) 218-2357</a><span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8248E1">Work</span></div>
+            <a href="mailto:nosonr@senturo.com" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap">nosonr@senturo.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BACK -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6B6B78">Noson · Back · 3.75 × 2.25 in with bleed · trim 3.5 × 2</span>
+    <div data-screen-label="Noson Back" style="width:1125px;height:675px;background:#562CAD;padding:101.5px 109.5px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(18,18,24,.18)"><sc-if value="{{ guides }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:37.5px;border:1px dashed #E5484D;pointer-events:none;z-index:5"></div><div style="position:absolute;inset:93.5px;border:1px dashed #30A46C;pointer-events:none;z-index:5"></div></sc-if>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px">
+        <img src="assets/logo-full-white.svg" alt="Senturo" style="height:60px;width:auto;display:block;filter:brightness(0) invert(1)">
+        <div style="display:flex;gap:40px;text-align:right">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;opacity:.7">US</span>
+            <p style="font-size:16px;font-weight:600;color:#FFFFFF;line-height:1.4">30 N Gould St, Ste 24743<br>Sheridan, WY 82801</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;opacity:.7">UK</span>
+            <p style="font-size:16px;font-weight:600;color:#FFFFFF;line-height:1.4">86-90 Paul Street<br>London EC2A 4NE</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px">
+        <h2 style="font-size:56px;font-weight:800;letter-spacing:-0.04em;line-height:1.08;color:#FFFFFF;white-space:nowrap">Every device,<br>accounted for.</h2>
+        <div style="display:flex;gap:24px;flex-shrink:0;align-items:flex-end">
+          <a href="https://meetings.senturo.com/meetings/noson/15min-30min-meeting" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+            <div style="background:#FFFFFF;border-radius:18px;padding:14px;display:flex"><div ref="{{ qrCallRef2 }}" style="width:172px;height:172px;display:flex"></div></div>
+            <span style="font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em">Book a call</span>
+          </a>
+          <a href="https://senturo.com" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+            <div style="background:#FFFFFF;border-radius:18px;padding:14px;display:flex"><div ref="{{ qrSiteRef2 }}" style="width:172px;height:172px;display:flex"></div></div>
+            <span style="font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em">senturo.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div data-screen-label="Louise" style="display:flex;flex-direction:column;gap:48px">
+  <!-- FRONT · 3.5in × 2in at 300dpi -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6B6B78">Louise · Front · 3.75 × 2.25 in with bleed · trim 3.5 × 2</span>
+    <div data-screen-label="Louise Front" style="width:1125px;height:675px;background:#FFFFFF;padding:109.5px 117.5px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(18,18,24,.10)"><sc-if value="{{ guides }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:37.5px;border:1px dashed #E5484D;pointer-events:none;z-index:5"></div><div style="position:absolute;inset:93.5px;border:1px dashed #30A46C;pointer-events:none;z-index:5"></div></sc-if>
+      <!-- oversized logo mark bleeding off the right edge, echoing the concentric-arc mark -->
+      <img src="assets/logo-icon.svg" alt="" style="position:absolute;right:-292.5px;top:-152.5px;width:980px;height:980px;opacity:.07;pointer-events:none">
+      <div style="position:absolute;right:-292.5px;top:-152.5px;width:980px;height:980px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.10) 0%,rgba(130,72,225,0) 62%);pointer-events:none"></div>
+            <img src="assets/logo-full-purple.svg" alt="Senturo" style="height:84px;width:auto;display:block;align-self:flex-start;position:relative">
+      <div style="display:flex;flex-direction:column;gap:22px;position:relative">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <h1 style="font-size:72px;font-weight:800;letter-spacing:-0.045em;line-height:1;color:#121218">Louise Duffy</h1>
+          <p style="font-size:28px;font-weight:600;color:#562CAD;letter-spacing:-0.01em">Sales Engineer</p>
+        </div>
+        <div style="display:flex;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:baseline;gap:10px"><a href="tel:+19426673727" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap;font-variant-numeric:tabular-nums">+1 (942) 667-3727</a><span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8248E1">Mobile</span></div><div style="display:flex;align-items:baseline;gap:10px"><a href="tel:+13072182357" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap;font-variant-numeric:tabular-nums">+1 (307) 218-2357</a><span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8248E1">Work</span></div>
+            <a href="mailto:louised@senturo.com" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap">louised@senturo.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BACK -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6B6B78">Louise · Back · 3.75 × 2.25 in with bleed · trim 3.5 × 2</span>
+    <div data-screen-label="Louise Back" style="width:1125px;height:675px;background:#562CAD;padding:101.5px 109.5px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(18,18,24,.18)"><sc-if value="{{ guides }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:37.5px;border:1px dashed #E5484D;pointer-events:none;z-index:5"></div><div style="position:absolute;inset:93.5px;border:1px dashed #30A46C;pointer-events:none;z-index:5"></div></sc-if>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px">
+        <img src="assets/logo-full-white.svg" alt="Senturo" style="height:60px;width:auto;display:block;filter:brightness(0) invert(1)">
+        <div style="display:flex;gap:40px;text-align:right">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;opacity:.7">US</span>
+            <p style="font-size:16px;font-weight:600;color:#FFFFFF;line-height:1.4">30 N Gould St, Ste 24743<br>Sheridan, WY 82801</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;opacity:.7">UK</span>
+            <p style="font-size:16px;font-weight:600;color:#FFFFFF;line-height:1.4">86-90 Paul Street<br>London EC2A 4NE</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px">
+        <h2 style="font-size:56px;font-weight:800;letter-spacing:-0.04em;line-height:1.08;color:#FFFFFF;white-space:nowrap">Every device,<br>accounted for.</h2>
+        <div style="display:flex;gap:24px;flex-shrink:0;align-items:flex-end">
+          <a href="https://meetings.senturo.com/meetings/louise/15min-30min-meeting" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+            <div style="background:#FFFFFF;border-radius:18px;padding:14px;display:flex"><div ref="{{ qrCallRef3 }}" style="width:172px;height:172px;display:flex"></div></div>
+            <span style="font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em">Book a call</span>
+          </a>
+          <a href="https://senturo.com" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+            <div style="background:#FFFFFF;border-radius:18px;padding:14px;display:flex"><div ref="{{ qrSiteRef3 }}" style="width:172px;height:172px;display:flex"></div></div>
+            <span style="font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em">senturo.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div data-screen-label="Benjamin" style="display:flex;flex-direction:column;gap:48px">
+  <!-- FRONT · 3.5in × 2in at 300dpi -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6B6B78">Benjamin · Front · 3.75 × 2.25 in with bleed · trim 3.5 × 2</span>
+    <div data-screen-label="Benjamin Front" style="width:1125px;height:675px;background:#FFFFFF;padding:109.5px 117.5px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(18,18,24,.10)"><sc-if value="{{ guides }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:37.5px;border:1px dashed #E5484D;pointer-events:none;z-index:5"></div><div style="position:absolute;inset:93.5px;border:1px dashed #30A46C;pointer-events:none;z-index:5"></div></sc-if>
+      <!-- oversized logo mark bleeding off the right edge, echoing the concentric-arc mark -->
+      <img src="assets/logo-icon.svg" alt="" style="position:absolute;right:-292.5px;top:-152.5px;width:980px;height:980px;opacity:.07;pointer-events:none">
+      <div style="position:absolute;right:-292.5px;top:-152.5px;width:980px;height:980px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.10) 0%,rgba(130,72,225,0) 62%);pointer-events:none"></div>
+            <img src="assets/logo-full-purple.svg" alt="Senturo" style="height:84px;width:auto;display:block;align-self:flex-start;position:relative">
+      <div style="display:flex;flex-direction:column;gap:22px;position:relative">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <h1 style="font-size:72px;font-weight:800;letter-spacing:-0.045em;line-height:1;color:#121218">Benjamin Weston</h1>
+          <p style="font-size:28px;font-weight:600;color:#562CAD;letter-spacing:-0.01em">COO</p>
+        </div>
+        <div style="display:flex;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:baseline;gap:10px"><a href="tel:+447356039487" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap;font-variant-numeric:tabular-nums">+44 7356 039487</a><span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8248E1">Mobile</span></div>
+            <div style="display:flex;align-items:baseline;gap:10px"><a href="tel:+13072182357" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap;font-variant-numeric:tabular-nums">+1 (307) 218-2357</a><span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8248E1">Work</span></div>
+            <a href="mailto:benw@senturo.com" style="font-size:24px;font-weight:600;color:#3E3E4A;letter-spacing:-0.01em;white-space:nowrap">benw@senturo.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BACK -->
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6B6B78">Benjamin · Back · 3.75 × 2.25 in with bleed · trim 3.5 × 2</span>
+    <div data-screen-label="Benjamin Back" style="width:1125px;height:675px;background:#562CAD;padding:101.5px 109.5px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(18,18,24,.18)"><sc-if value="{{ guides }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:37.5px;border:1px dashed #E5484D;pointer-events:none;z-index:5"></div><div style="position:absolute;inset:93.5px;border:1px dashed #30A46C;pointer-events:none;z-index:5"></div></sc-if>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px">
+        <img src="assets/logo-full-white.svg" alt="Senturo" style="height:60px;width:auto;display:block;filter:brightness(0) invert(1)">
+        <div style="display:flex;gap:40px;text-align:right">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;opacity:.7">US</span>
+            <p style="font-size:16px;font-weight:600;color:#FFFFFF;line-height:1.4">30 N Gould St, Ste 24743<br>Sheridan, WY 82801</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;opacity:.7">UK</span>
+            <p style="font-size:16px;font-weight:600;color:#FFFFFF;line-height:1.4">86-90 Paul Street<br>London EC2A 4NE</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px">
+        <h2 style="font-size:56px;font-weight:800;letter-spacing:-0.04em;line-height:1.08;color:#FFFFFF;white-space:nowrap">Every device,<br>accounted for.</h2>
+        <div style="display:flex;gap:24px;flex-shrink:0;align-items:flex-end">
+          <a href="https://meetings.hubspot.com/bweston/senturo-call" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+            <div style="background:#FFFFFF;border-radius:18px;padding:14px;display:flex"><div ref="{{ qrCallRef4 }}" style="width:172px;height:172px;display:flex"></div></div>
+            <span style="font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em">Book a call</span>
+          </a>
+          <a href="https://senturo.com" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:14px">
+            <div style="background:#FFFFFF;border-radius:18px;padding:14px;display:flex"><div ref="{{ qrSiteRef4 }}" style="width:172px;height:172px;display:flex"></div></div>
+            <span style="font-size:18px;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em">senturo.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;guides&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Print&quot;}}">
+class Component extends DCLogic {
+  callUrl = 'https://meetings.senturo.com/meetings/bjornh/discovery-call?uuid=eb353330-1416-46b8-a1bc-d14263d6adf9';
+  siteUrl = 'https://senturo.com';
+  qrCallRef = React.createRef();
+  qrSiteRef = React.createRef();
+  qrCallRef2 = React.createRef();
+  qrSiteRef2 = React.createRef();
+  qrCallRef3 = React.createRef();
+  qrSiteRef3 = React.createRef();
+  qrCallRef4 = React.createRef();
+  qrSiteRef4 = React.createRef();
+  componentDidMount() { this.draw(); this._iv = setInterval(() => this.draw(), 800); }
+  componentWillUnmount() { clearInterval(this._iv); }
+  componentDidUpdate() { this.draw(); }
+  draw(tries = 0) {
+    if (typeof window.qrcode !== 'function') { if (tries < 40) setTimeout(() => this.draw(tries + 1), 150); return; }
+    this.render(this.qrCallRef.current, this.callUrl);
+    this.render(this.qrSiteRef.current, this.siteUrl);
+    this.render(this.qrCallRef2.current, 'https://meetings.senturo.com/meetings/noson/15min-30min-meeting');
+    this.render(this.qrSiteRef2.current, this.siteUrl);
+    this.render(this.qrCallRef3.current, 'https://meetings.senturo.com/meetings/louise/15min-30min-meeting');
+    this.render(this.qrSiteRef3.current, this.siteUrl);
+    this.render(this.qrCallRef4.current, 'https://meetings.hubspot.com/bweston/senturo-call');
+    this.render(this.qrSiteRef4.current, this.siteUrl);
+  }
+  render(el, url) {
+    if (!el || el.firstChild) return;
+    const qr = window.qrcode(0, 'M');
+    qr.addData(url); qr.make();
+    const S = 172, n = qr.getModuleCount(), cell = S / n;
+    let path = '';
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (qr.isDark(r, c)) path += `M${(c*cell).toFixed(2)} ${(r*cell).toFixed(2)}h${cell.toFixed(2)}v${cell.toFixed(2)}h-${cell.toFixed(2)}z`;
+    el.innerHTML = `<svg width="${S}" height="${S}" viewBox="0 0 ${S} ${S}" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><path d="${path}" fill="#121218"/></svg>`;
+  }
+  renderVals() { return { guides: this.props.guides ?? false, qrCallRef: this.qrCallRef, qrSiteRef: this.qrSiteRef, qrCallRef2: this.qrCallRef2, qrSiteRef2: this.qrSiteRef2, qrCallRef3: this.qrCallRef3, qrSiteRef3: this.qrSiteRef3, qrCallRef4: this.qrCallRef4, qrSiteRef4: this.qrSiteRef4 }; }
+}
+</script>
+</body>
+</html>
