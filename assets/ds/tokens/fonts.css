@@ -1,0 +1,13 @@
+/*
+ * Senturo brand typefaces
+ * ──────────────────────────────────────────────────────────────────────
+ * ⚠️  SUBSTITUTION FLAG
+ *   The Senturo wordmark uses a proprietary geometric sans-serif.
+ *   We are substituting "Plus Jakarta Sans" (Google Fonts) as the
+ *   closest publicly available match. Replace with licensed Senturo
+ *   brand font files (.woff2) when available.
+ *
+ *   Monospace: "JetBrains Mono" substituted for code/data contexts.
+ * ──────────────────────────────────────────────────────────────────────
+ */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
