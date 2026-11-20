@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="assets/ds/styles.css">
+<script src="assets/ds/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:#FFFFFF;color:#121218;font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#8248E1;text-decoration:none}a:hover{color:#6B38C8}
+p,h1,h2,h3,h4{margin:0}
+select{appearance:none;-webkit-appearance:none}
+@keyframes travelDown{0%{transform:translateY(0);opacity:0}14%{opacity:1}100%{transform:translateY(270px);opacity:1}}
+@keyframes travelUp{0%{transform:translateY(0);opacity:0}14%{opacity:1}100%{transform:translateY(-240px);opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes slideIn{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+@keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(31,138,91,.45)}60%{box-shadow:0 0 0 14px rgba(31,138,91,0)}}
+@keyframes ping{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.8);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+
+<div data-screen-label="Homepage" style="width:100%;min-width:0;overflow-x:clip">
+
+<!-- NAV -->
+<div style="position:sticky;top:12px;z-index:200;display:flex;justify-content:center;padding:0 16px">
+  <header style="max-width:1180px;width:100%;display:flex;align-items:center;gap:28px;padding:8px 8px 8px 20px;border-radius:9999px;background:rgba(255,255,255,.72);backdrop-filter:blur(18px);border:1px solid {{ navBorder }};box-shadow:{{ navShadow }};transition:box-shadow .25s ease,border-color .25s ease">
+    <a href="#" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/logo-full.svg" alt="Senturo" style="height:26px;width:auto;display:block"></a>
+    <nav style="display:flex;align-items:center;gap:4px;flex:1;min-width:0;flex-wrap:wrap">
+      <a href="#platform" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Platform<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+      <a href="#integrations" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Integrations<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+      <a href="#stories" style-hover="background:#F0F0F2;color:#121218" style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Company<span style="width:14px;height:14px;background:#5E5E6A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></a>
+      <a href="#faq" style-hover="background:#F0F0F2;color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Our Data</a>
+      <a href="#demo" style-hover="background:#F0F0F2;color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;border-radius:9999px;transition:background .2s ease,color .2s ease">Pricing</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <a href="#" style-hover="color:#121218" style="font-size:14px;font-weight:600;color:#3E3E4A;padding:8px 12px;transition:color .2s ease">Login</a>
+      <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="md" right-icon="{{ arrowWhite }}" hint-size="150px,40px">Book a Demo</x-import>
+    </div>
+  </header>
+</div>
+
+<!-- HERO -->
+<section data-screen-label="Hero" style="margin-top:-68px;padding-top:68px;background:radial-gradient(ellipse 55% 60% at 78% 30%,rgba(130,72,225,.24) 0%,rgba(130,72,225,0) 70%),radial-gradient(ellipse 40% 40% at 10% 90%,rgba(130,72,225,.08) 0%,rgba(130,72,225,0) 70%),#F8F8F9;position:relative;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:72px 32px 96px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;position:relative">
+    <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:28px;min-width:0;animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) both">
+      <h1 style="font-size:clamp(36px,4.3vw,58px);font-weight:800;letter-spacing:-0.045em;line-height:.98;color:#121218;text-wrap:balance">Device <span style="color:#562CAD">tracking</span> and <span style="color:#562CAD">recovery</span> software built for IT teams</h1>
+      <p style="font-size:clamp(18px,1.6vw,22px);font-weight:600;color:#3E3E4A;line-height:1.35">Real-time location + automated security + remote recovery</p>
+      <div style="font-size: 17px; line-height: 1.65; color: #000000; max-width: 560px; text-wrap: pretty"><p dir="auto" data-pm-slice="1 1 []">Track devices across locations and networks, understand where they’ve been, and act when something changes. Senturo helps IT teams take a more proactive approach to recovery by catching risks earlier, securing devices remotely, and moving faster when a device goes missing.</p></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" right-icon="{{ arrowWhite }}" hint-size="190px,48px">Get Started Now</x-import>
+      </div>
+    </div>
+
+    <div style="position:relative;min-width:0;padding:56px 0">
+      <div style="position:absolute;inset:-96px 0 -80px;pointer-events:none;display:grid;grid-template-columns:repeat(3,1fr)">
+        <span style="border-left:1px solid #E4E4E8;justify-self:center"></span><span style="border-left:1px solid #E4E4E8;justify-self:center"></span><span style="border-left:1px solid #E4E4E8;justify-self:center"></span>
+      </div>
+      <!-- travelers: ride the lines down into the demo (lines 1 & 2) and up into it (line 3) -->
+      <div style="position:absolute;top:-96px;left:calc(16.667% - 40px);width:80px;height:80px;border-radius:20px;animation:travelDown 9s linear 0s infinite;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 32px -14px rgba(130,72,225,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;pointer-events:none">
+        <span style="width:20px;height:20px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat"></span>
+        <span style="font-size:11px;font-weight:600;color:#3E3E4A;text-align:center;line-height:1.2">Remote<br>Lock</span>
+      </div>
+      <div style="position:absolute;top:-96px;left:calc(83.333% - 40px);width:80px;height:80px;border-radius:20px;animation:travelDown 9s linear 6s infinite;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 32px -14px rgba(130,72,225,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;pointer-events:none;opacity:0">
+        <span style="width:20px;height:20px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat"></span>
+        <span style="font-size:11px;font-weight:600;color:#3E3E4A;text-align:center;line-height:1.2">Remote<br>Wipe</span>
+      </div>
+      <div style="position:absolute;top:-96px;left:calc(50% - 40px);width:80px;height:80px;border-radius:20px;animation:travelDown 9s linear 3s infinite;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 32px -14px rgba(130,72,225,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;pointer-events:none;opacity:0">
+        <span style="width:20px;height:20px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radio.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radio.svg) center / contain no-repeat"></span>
+        <span style="font-size:11px;font-weight:600;color:#3E3E4A">Broadcasting</span>
+      </div>
+      <div style="position:absolute;top:-96px;left:calc(83.333% - 40px);width:80px;height:80px;border-radius:20px;animation:travelDown 9s linear 1.5s infinite;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 32px -14px rgba(130,72,225,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;pointer-events:none;opacity:0">
+        <span style="width:20px;height:20px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/wifi.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/wifi.svg) center / contain no-repeat"></span>
+        <span style="font-size:11px;font-weight:600;color:#3E3E4A;text-align:center;line-height:1.2">Network<br>History</span>
+      </div>
+      <div style="position:absolute;bottom:-80px;left:calc(16.667% - 40px);width:80px;height:80px;border-radius:20px;animation:travelUp 9s linear 1s infinite;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 32px -14px rgba(130,72,225,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;pointer-events:none;opacity:0">
+        <span style="width:20px;height:20px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat"></span>
+        <span style="font-size:11px;font-weight:600;color:#3E3E4A">Geofencing</span>
+      </div>
+      <div style="position:absolute;bottom:-80px;left:calc(50% - 40px);width:80px;height:80px;border-radius:20px;animation:travelUp 9s linear 4s infinite;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 32px -14px rgba(130,72,225,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;pointer-events:none;opacity:0">
+        <span style="width:20px;height:20px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/route.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/route.svg) center / contain no-repeat"></span>
+        <span style="font-size:11px;font-weight:600;color:#3E3E4A;text-align:center;line-height:1.2">Location<br>History</span>
+      </div>
+      <div style="position:absolute;bottom:-80px;left:calc(83.333% - 40px);width:80px;height:80px;border-radius:20px;animation:travelUp 9s linear 7s infinite;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 32px -14px rgba(130,72,225,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;pointer-events:none;opacity:0">
+        <span style="width:20px;height:20px;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/user-check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/user-check.svg) center / contain no-repeat"></span>
+        <span style="font-size:11px;font-weight:600;color:#3E3E4A;text-align:center;line-height:1.2">Last Log-in<br>Users</span>
+      </div>
+      <div style="position:relative;z-index:1;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:22px;overflow:hidden;animation:rise .9s cubic-bezier(.2,.7,.2,1) .15s both;box-shadow:0 40px 80px -24px rgba(130,72,225,.35),0 10px 20px -8px rgba(18,18,24,.08)">
+        <div style="position:relative;padding-bottom:50.315346881569724%;height:0;overflow:hidden"><iframe id="gkyz3jzf4r" src="https://app.guideflow.com/embed/gkyz3jzf4r" width="100%" height="100%" style="overflow:hidden;position:absolute;top:-47px;left:0;width:100%;height:calc(100% + 47px);border:none" scrolling="no" allow="clipboard-read; clipboard-write; autoplay; fullscreen" allowfullscreen="" allowtransparency="true" title="Senturo live demo"></iframe></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section style="border-bottom:1px solid #F0F0F2">
+  <div style="max-width:1240px;margin:0 auto;padding:56px 32px;display:flex;flex-direction:column;gap:28px;align-items:center">
+    <h2 style="font-size:clamp(18px,2.2vw,28px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;color:#121218;text-align:center;white-space:nowrap">Trusted by 1600+ clients in 30 states and 12 industries</h2>
+    <div style="width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)"><div style="display:flex;align-items:center;gap:72px;width:max-content;padding-right:72px;animation:marquee 36s linear infinite">
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">ramp</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">usbank</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+    
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">ramp</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">usbank</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+      <span style="font-size:18px;font-weight:800;color:#A8A8AE;letter-spacing:-0.02em;white-space:nowrap">logo</span>
+    </div></div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section data-screen-label="Problem" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px 80px;display:flex;flex-direction:column;gap:64px">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center">
+      <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#562CAD;text-wrap:pretty">Device recovery starts too late.</h2>
+      <p style="font-size:18px;color:#5E5E6A;line-height:1.6;max-width:820px;text-wrap:pretty">By the time a device is reported missing, IT may already be working with old location data and limited context on what happened. Senturo keeps a continuous record and gives teams the tools for a more proactive approach to recovery.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+      <div data-reveal="" style-hover="transform:scale(1.05);border-color:#D0BCF5" style="background:#2A1556;border:1px solid #2A1556;border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;min-height:240px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease;position:relative;overflow:hidden"><span style="position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.35),rgba(130,72,225,0) 70%);pointer-events:none;z-index:0"></span>
+        <h3 style="font-size:36px;font-weight:800;letter-spacing:-0.04em;text-wrap:balance;line-height:1;margin-top:auto;color:#FFFFFF;position:relative;z-index:1">10 min</h3>
+        <p style="font-size:16px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#FFFFFF;margin-top:-4px;position:relative;z-index:1">Default location updates</p>
+        <p style="font-size:14px;line-height:1.55;color:#FFFFFF;flex:1;position:relative;z-index:1">Senturo regularly updates device location, helping IT maintain visibility before a device is ever reported missing.</p>
+        <span style="width:22px;height:22px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/refresh-cw.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/refresh-cw.svg) center / contain no-repeat"></span>
+      </div>
+      <div data-reveal="" style-hover="transform:scale(1.05);border-color:#D0BCF5" style="background:#2A1556;border:1px solid #2A1556;border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;min-height:240px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease;position:relative;overflow:hidden"><span style="position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.35),rgba(130,72,225,0) 70%);pointer-events:none;z-index:0"></span>
+        <h3 style="font-size:36px;font-weight:800;letter-spacing:-0.04em;text-wrap:balance;line-height:1;margin-top:auto;color:#FFFFFF;position:relative;z-index:1">24 months</h3>
+        <p style="font-size:16px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#FFFFFF;margin-top:-4px;position:relative;z-index:1">Location history</p>
+        <p style="font-size:14px;line-height:1.55;color:#FFFFFF;flex:1;position:relative;z-index:1">Review up to two years of device location history to understand where a device has been and build a clearer timeline.</p>
+        <span style="width:22px;height:22px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat"></span>
+      </div>
+      <div data-reveal="" style-hover="transform:scale(1.05);border-color:#D0BCF5" style="background:#2A1556;border:1px solid #2A1556;border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;min-height:240px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease;position:relative;overflow:hidden"><span style="position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.35),rgba(130,72,225,0) 70%);pointer-events:none;z-index:0"></span>
+        <h3 style="font-size:36px;font-weight:800;letter-spacing:-0.04em;text-wrap:balance;line-height:1;margin-top:auto;color:#FFFFFF;position:relative;z-index:1">1 min</h3>
+        <p style="font-size:16px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#FFFFFF;margin-top:-4px;position:relative;z-index:1">Missing Mode updates</p>
+        <p style="font-size:14px;line-height:1.55;color:#FFFFFF;flex:1;position:relative;z-index:1">When recovery becomes urgent, Missing Mode increases location updates to every minute for much more frequent visibility.</p>
+        <span style="width:22px;height:22px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat"></span>
+      </div>
+      <div data-reveal="" style-hover="transform:scale(1.05);border-color:#D0BCF5" style="background:#2A1556;border:1px solid #2A1556;border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;min-height:240px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease;position:relative;overflow:hidden"><span style="position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(130,72,225,.35),rgba(130,72,225,0) 70%);pointer-events:none;z-index:0"></span>
+        <h3 style="font-size:36px;font-weight:800;letter-spacing:-0.04em;text-wrap:balance;line-height:1;margin-top:auto;color:#FFFFFF;position:relative;z-index:1">One platform</h3>
+        <p style="font-size:16px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#FFFFFF;margin-top:-4px;position:relative;z-index:1">From visibility to recovery</p>
+        <p style="font-size:14px;line-height:1.55;color:#FFFFFF;flex:1;position:relative;z-index:1">Bring device location, history, automations, remote actions, and recovery workflows together in one place.</p>
+        <span style="width:22px;height:22px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/layout-grid.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/layout-grid.svg) center / contain no-repeat"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD CAPTURE -->
+<section data-screen-label="Feature cards" style="background:#F8F8F9;border-top:1px solid #F0F0F2;border-bottom:1px solid #F0F0F2;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:96px 32px 0;display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center" data-reveal="">
+    <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-wrap:balance">Keep track of your devices, even when plans change</h2>
+    <p style="font-size:18px;color:#5E5E6A;line-height:1.6;max-width:720px;text-wrap:pretty">IT can see what happened, respond when something changes, and keep the records needed to follow up.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px;padding:64px 0 96px">
+    <div style="width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)"><div style="display:flex;gap:20px;width:max-content;padding-right:20px;animation:marquee 60s linear infinite">
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Device location</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#F5F0FD;color:#562CAD;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Last reported location · 2:41 PM</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/history.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/history.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Location history</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">View location history</span><span style="display:flex;gap:6px;align-items:center;margin-top:6px"><span style="width:8px;height:8px;border-radius:50%;background:#8248E1;flex:none"></span><span style="flex:1;border-top:1.5px dashed #CACACE"></span><span style="width:8px;height:8px;border-radius:50%;background:#8248E1;flex:none"></span><span style="flex:1;border-top:1.5px dashed #CACACE"></span><span style="width:8px;height:8px;border-radius:50%;background:#562CAD;flex:none"></span></span><span style="display:flex;justify-content:space-between;font-size:10px;color:#848490"><span>9:02</span><span>11:30</span><span>2:41</span></span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Missing Mode</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#562CAD;color:#FFFFFF;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1"><span style="width:8px;height:8px;border-radius:50%;background:#FFFFFF;flex:none"></span>Missing Mode activated</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Live tracking</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#E6F4EC;color:#1F8A5B;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1"><span style="width:8px;height:8px;border-radius:50%;background:#1F8A5B;flex:none"></span>New location received</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/camera.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/camera.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Screen snapshots</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#F0F0F2;color:#121218;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Snapshot captured</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/user.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/user.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Last logged-in user</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">Last login · Jordan M. · 9:14 AM</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/phone-call.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/phone-call.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Agent Phone Home</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">No check-in for 7 days</span><span style="display:inline-flex;align-items:center;gap:6px;background:#FDECEC;color:#B42318;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Lock triggered</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Geofencing</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#FDECEC;color:#B42318;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1"><span style="width:8px;height:8px;border-radius:50%;background:#B42318;flex:none"></span>Device left approved area</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Device location</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#F5F0FD;color:#562CAD;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Last reported location · 2:41 PM</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/history.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/history.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Location history</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">View location history</span><span style="display:flex;gap:6px;align-items:center;margin-top:6px"><span style="width:8px;height:8px;border-radius:50%;background:#8248E1;flex:none"></span><span style="flex:1;border-top:1.5px dashed #CACACE"></span><span style="width:8px;height:8px;border-radius:50%;background:#8248E1;flex:none"></span><span style="flex:1;border-top:1.5px dashed #CACACE"></span><span style="width:8px;height:8px;border-radius:50%;background:#562CAD;flex:none"></span></span><span style="display:flex;justify-content:space-between;font-size:10px;color:#848490"><span>9:02</span><span>11:30</span><span>2:41</span></span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/siren.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Missing Mode</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#562CAD;color:#FFFFFF;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1"><span style="width:8px;height:8px;border-radius:50%;background:#FFFFFF;flex:none"></span>Missing Mode activated</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Live tracking</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#E6F4EC;color:#1F8A5B;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1"><span style="width:8px;height:8px;border-radius:50%;background:#1F8A5B;flex:none"></span>New location received</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/camera.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/camera.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Screen snapshots</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#F0F0F2;color:#121218;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Snapshot captured</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/user.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/user.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Last logged-in user</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">Last login · Jordan M. · 9:14 AM</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/phone-call.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/phone-call.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Agent Phone Home</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">No check-in for 7 days</span><span style="display:inline-flex;align-items:center;gap:6px;background:#FDECEC;color:#B42318;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Lock triggered</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Geofencing</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#FDECEC;color:#B42318;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1"><span style="width:8px;height:8px;border-radius:50%;background:#B42318;flex:none"></span>Device left approved area</span></div>
+        </div>
+      </div></div>
+    <div style="width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)"><div style="display:flex;gap:20px;width:max-content;padding-right:20px;animation:marquee 70s linear infinite reverse">
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/zap.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/zap.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Automated actions</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">Policy triggered · IT notified</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Broadcast messages</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="background:#F5F0FD;border-radius:10px 10px 10px 2px;padding:8px 10px;font-size:12px;color:#121218;line-height:1.4">Please return this device to IT</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Remote lock</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#121218;color:#FFFFFF;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Device locked</span><span style="font-size:13px;font-weight:500;color:#848490;line-height:1.35">“Return to IT, 4th floor”</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock-open.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock-open.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Remote unlock</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#E6F4EC;color:#1F8A5B;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Device unlocked</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/trash-2.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/trash-2.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Remote wipe</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#FDECEC;color:#B42318;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Wipe requested</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/laptop.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/laptop.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Device details</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:11px;line-height:1.4"><span style="color:#848490">Name</span><span style="color:#121218;font-weight:600">MBP-0412</span><span style="color:#848490">OS</span><span style="color:#121218;font-weight:600">macOS 15.1</span><span style="color:#848490">Serial</span><span style="color:#121218;font-weight:600">C02XK1ZJ</span><span style="color:#848490">Check-in</span><span style="color:#121218;font-weight:600">2 min ago</span></span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-down.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">PDF export</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">Device recovery report</span><span style="display:inline-flex;align-items:center;gap:6px;background:#F5F0FD;color:#562CAD;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Download PDF</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/plug.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/plug.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">MDM integrations</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Jamf</span><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Google Admin</span><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Intune</span><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Meraki</span><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Incident IQ</span></span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/zap.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/zap.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Automated actions</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">Policy triggered · IT notified</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Broadcast messages</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="background:#F5F0FD;border-radius:10px 10px 10px 2px;padding:8px 10px;font-size:12px;color:#121218;line-height:1.4">Please return this device to IT</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Remote lock</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#121218;color:#FFFFFF;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Device locked</span><span style="font-size:13px;font-weight:500;color:#848490;line-height:1.35">“Return to IT, 4th floor”</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock-open.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock-open.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Remote unlock</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#E6F4EC;color:#1F8A5B;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Device unlocked</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/trash-2.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/trash-2.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Remote wipe</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:inline-flex;align-items:center;gap:6px;background:#FDECEC;color:#B42318;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Wipe requested</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/laptop.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/laptop.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">Device details</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:11px;line-height:1.4"><span style="color:#848490">Name</span><span style="color:#121218;font-weight:600">MBP-0412</span><span style="color:#848490">OS</span><span style="color:#121218;font-weight:600">macOS 15.1</span><span style="color:#848490">Serial</span><span style="color:#121218;font-weight:600">C02XK1ZJ</span><span style="color:#848490">Check-in</span><span style="color:#121218;font-weight:600">2 min ago</span></span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-down.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">PDF export</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="font-size:13px;font-weight:600;color:#3E3E4A;line-height:1.35">Device recovery report</span><span style="display:inline-flex;align-items:center;gap:6px;background:#F5F0FD;color:#562CAD;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;line-height:1">Download PDF</span></div>
+        </div>
+        <div style="flex:none;width:260px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:16px;box-shadow:0 10px 15px -3px rgba(18,18,24,.06);padding:18px;display:flex;flex-direction:column;gap:12px;min-height:150px">
+          <div style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;flex:none;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/plug.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/plug.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218;letter-spacing:-0.01em">MDM integrations</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;margin-top:auto"><span style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Jamf</span><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Google Admin</span><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Intune</span><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Meraki</span><span style="font-size:11px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;padding:4px 8px;line-height:1">Incident IQ</span></span></div>
+        </div>
+      </div></div>
+  </div>
+</section>
+
+<!-- TABS -->
+<section data-screen-label="Platform" id="platform" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:48px;align-items:center">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:24px;align-items:center;text-align:center">
+      <h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;max-width:900px;text-wrap:balance">One place to find, secure, and manage your devices</h2>
+      <p style="font-size:18px;line-height:1.6;color:#5E5E6A;max-width:720px;text-wrap:pretty">Explore how Senturo helps IT teams see what’s happening across their fleet, respond when a device needs attention, and automate the actions they would otherwise have to remember to take.</p>
+      <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="secondary" size="md" right-icon="{{ arrowPurple }}" hint-size="210px,40px">See Senturo in action</x-import>
+    </div>
+    <div style="width:100%;display:flex;flex-direction:column;align-items:center;gap:40px">
+      <div data-reveal="" style="display:inline-flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:4px;border-radius:9999px;background:#F0F0F2;border:1px solid #E4E4E8">
+        <button onClick="{{ tab0 }}" style="appearance:none;border:0;border-radius:9999px;background:{{ tabBg0 }};color:{{ tabColor0 }};box-shadow:{{ tabShadow0 }};font-family:inherit;font-size:15px;font-weight:600;padding:10px 20px;cursor:pointer;transition:background .25s ease,color .25s ease,box-shadow .25s ease">Find &amp; investigate</button>
+        <button onClick="{{ tab1 }}" style="appearance:none;border:0;border-radius:9999px;background:{{ tabBg1 }};color:{{ tabColor1 }};box-shadow:{{ tabShadow1 }};font-family:inherit;font-size:15px;font-weight:600;padding:10px 20px;cursor:pointer;transition:background .25s ease,color .25s ease,box-shadow .25s ease">Secure &amp; communicate</button>
+        <button onClick="{{ tab2 }}" style="appearance:none;border:0;border-radius:9999px;background:{{ tabBg2 }};color:{{ tabColor2 }};box-shadow:{{ tabShadow2 }};font-family:inherit;font-size:15px;font-weight:600;padding:10px 20px;cursor:pointer;transition:background .25s ease,color .25s ease,box-shadow .25s ease">Automate &amp; document</button>
+      </div>
+      <div style="width:100%">
+        <sc-if value="{{ isTab0 }}" hint-placeholder-val="{{ true }}">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;animation:fadeUp .45s cubic-bezier(.2,.7,.2,1) both">
+            <div style-hover="transform:translateY(-6px);border-color:#D0BCF5" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:18px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease">
+              <div style="width:48px;height:48px;border-radius:14px;background:#8248E1;box-shadow:0 10px 20px -8px rgba(130,72,225,.6);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat"></span></div>
+              <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#121218;margin-top:auto">Location &amp; history</h3>
+              <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">See a device’s latest reported location and where it has been.</p>
+            </div>
+            <div style-hover="transform:translateY(-6px);border-color:#D0BCF5" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:18px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease">
+              <div style="width:48px;height:48px;border-radius:14px;background:#8248E1;box-shadow:0 10px 20px -8px rgba(130,72,225,.6);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat"></span></div>
+              <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#121218;margin-top:auto">Missing Mode</h3>
+              <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Turn on live tracking and screen snapshots when a device goes missing.</p>
+            </div>
+            <div style-hover="transform:translateY(-6px);border-color:#D0BCF5" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:18px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease">
+              <div style="width:48px;height:48px;border-radius:14px;background:#8248E1;box-shadow:0 10px 20px -8px rgba(130,72,225,.6);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/user-round.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/user-round.svg) center / contain no-repeat"></span></div>
+              <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#121218;margin-top:auto">Device &amp; user details</h3>
+              <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Check the last logged-in user, device details, and last check-in.</p>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ isTab1 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;animation:fadeUp .45s cubic-bezier(.2,.7,.2,1) both">
+            <div style-hover="transform:translateY(-6px);border-color:#D0BCF5" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:18px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease">
+              <div style="width:48px;height:48px;border-radius:14px;background:#8248E1;box-shadow:0 10px 20px -8px rgba(130,72,225,.6);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock-keyhole.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock-keyhole.svg) center / contain no-repeat"></span></div>
+              <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#121218;margin-top:auto">Remote lock &amp; unlock</h3>
+              <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Lock a device with a custom return message, then unlock it when it’s back.</p>
+            </div>
+            <div style-hover="transform:translateY(-6px);border-color:#D0BCF5" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:18px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease">
+              <div style="width:48px;height:48px;border-radius:14px;background:#8248E1;box-shadow:0 10px 20px -8px rgba(130,72,225,.6);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/megaphone.svg) center / contain no-repeat"></span></div>
+              <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#121218;margin-top:auto">Broadcast messages</h3>
+              <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Send a message to one device, a group, or the whole fleet.</p>
+            </div>
+            <div style-hover="transform:translateY(-6px);border-color:#D0BCF5" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:18px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease">
+              <div style="width:48px;height:48px;border-radius:14px;background:#8248E1;box-shadow:0 10px 20px -8px rgba(130,72,225,.6);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eraser.svg) center / contain no-repeat"></span></div>
+              <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#121218;margin-top:auto">Remote wipe</h3>
+              <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Erase device data when it needs to be protected.</p>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ isTab2 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;animation:fadeUp .45s cubic-bezier(.2,.7,.2,1) both">
+            <div style-hover="transform:translateY(-6px);border-color:#D0BCF5" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:18px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease">
+              <div style="width:48px;height:48px;border-radius:14px;background:#8248E1;box-shadow:0 10px 20px -8px rgba(130,72,225,.6);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pinned.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pinned.svg) center / contain no-repeat"></span></div>
+              <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#121218;margin-top:auto">Geofencing</h3>
+              <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Get an alert when a device leaves an approved area.</p>
+            </div>
+            <div style-hover="transform:translateY(-6px);border-color:#D0BCF5" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:18px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease">
+              <div style="width:48px;height:48px;border-radius:14px;background:#8248E1;box-shadow:0 10px 20px -8px rgba(130,72,225,.6);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/timer.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/timer.svg) center / contain no-repeat"></span></div>
+              <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#121218;margin-top:auto">Agent Phone Home</h3>
+              <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Set how long a device can go without checking in and trigger an action, such as a lock.</p>
+            </div>
+            <div style-hover="transform:translateY(-6px);border-color:#D0BCF5" style="background:#F8F8F9;border:1px solid #F0F0F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:18px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease">
+              <div style="width:48px;height:48px;border-radius:14px;background:#8248E1;box-shadow:0 10px 20px -8px rgba(130,72,225,.6);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/file-check.svg) center / contain no-repeat"></span></div>
+              <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#121218;margin-top:auto">Automations &amp; reports</h3>
+              <p style="font-size:16px;line-height:1.6;color:#5E5E6A;text-wrap:pretty">Run actions based on your policies and export a PDF recovery report when you need a record.</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+<section data-screen-label="Explore platform" id="integrations" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px 0;text-align:center">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;align-items:center"><span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Platform</span><h2 style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218">Explore the Senturo platform</h2></div>
+  </div>
+  <div style="max-width:1240px;margin:0 auto;padding:64px 32px 120px;display:flex;flex-direction:column;gap:16px" <!--="" row="" 1="" --="">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;overflow:hidden">
+      <div data-reveal="" style="background:radial-gradient(ellipse 80% 70% at 30% 0%,#E9DDFB,#F5F0FD 75%);padding:48px 40px;display:flex;align-items:center;justify-content:center;min-width:0"><div style="position:relative;width:100%;max-width:480px;min-height:380px">
+          <div style="position:absolute;left:0;top:0;right:110px;height:250px;border-radius:14px;border:1px solid #E4E4E8;overflow:hidden;background-color:#EEF0F4;background-image:linear-gradient(rgba(18,18,24,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(18,18,24,.06) 1px,transparent 1px);background-size:28px 28px;box-shadow:0 8px 24px -12px rgba(42,21,86,.25)">
+            <span style="position:absolute;left:-5%;top:60%;width:110%;height:10px;background:#FFFFFF;transform:rotate(-8deg)"></span><span style="position:absolute;left:35%;top:-5%;width:10px;height:110%;background:#FFFFFF;transform:rotate(12deg)"></span>
+            <span style="position:absolute;left:22%;top:30%;width:10px;height:10px;border-radius:50%;background:#B59AEF;border:2px solid #FFFFFF;box-shadow:0 2px 6px rgba(18,18,24,.25);transform:translate(-50%,-50%)"></span><span style="position:absolute;left:48%;top:68%;width:10px;height:10px;border-radius:50%;background:#B59AEF;border:2px solid #FFFFFF;box-shadow:0 2px 6px rgba(18,18,24,.25);transform:translate(-50%,-50%)"></span><span style="position:absolute;left:70%;top:25%;width:10px;height:10px;border-radius:50%;background:#B59AEF;border:2px solid #FFFFFF;box-shadow:0 2px 6px rgba(18,18,24,.25);transform:translate(-50%,-50%)"></span><span style="position:absolute;left:58%;top:44%;width:14px;height:14px;border-radius:50%;background:#8248E1;border:2px solid #FFFFFF;box-shadow:0 2px 6px rgba(18,18,24,.25);transform:translate(-50%,-50%)"><span style="position:absolute;inset:-6px;border-radius:50%;background:#8248E1;animation:ping 2s ease-out infinite;opacity:.4"></span></span><span style="position:absolute;left:82%;top:72%;width:10px;height:10px;border-radius:50%;background:#B59AEF;border:2px solid #FFFFFF;box-shadow:0 2px 6px rgba(18,18,24,.25);transform:translate(-50%,-50%)"></span>
+            <div style="position:absolute;left:12px;top:12px;display:flex;gap:6px"><span style="font-size:12px;font-weight:600;color:#562CAD;background:#F5F0FD;border:1px solid #E9DDFB;border-radius:4px;padding:4px 10px">All devices</span><span style="font-size:12px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:4px 10px">Online</span></div>
+          </div>
+          <div style="position:absolute;right:0;top:40px;width:260px;animation:slideIn .9s cubic-bezier(.2,.7,.2,1) .3s both"><div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px -12px rgba(42,21,86,.25);"><div style="display:flex;justify-content:space-between;align-items:center"><span style="display:flex;gap:8px;align-items:center"><span style="width:16px;height:16px;flex-shrink:0;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/laptop.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/laptop.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218">MBP-2041</span></span><span style="font-size:11px;font-weight:700;color:#1F8A5B;background:#E6F4EC;border-radius:4px;padding:3px 8px;letter-spacing:.02em">Online</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:#5E5E6A"><span style="display:flex;justify-content:space-between"><span>Last user</span><span style="font-weight:600;color:#121218">a.morales</span></span><span style="display:flex;justify-content:space-between"><span>Last check-in</span><span style="font-weight:600;color:#121218">4 min ago</span></span><span style="display:flex;justify-content:space-between"><span>Location</span><span style="font-weight:600;color:#121218">Main campus</span></span></div>
+            <div style="border-top:1px solid #F0F0F2;padding-top:10px;display:flex;flex-direction:column;gap:8px"><span style="font-size:11px;font-weight:700;color:#848490;letter-spacing:.06em;text-transform:uppercase">Location history</span>
+              <div style="display:grid;grid-template-columns:10px 1fr auto;gap:6px 10px;align-items:center;font-size:12px;color:#3E3E4A"><span style="width:8px;height:8px;border-radius:50%;background:#8248E1"></span><span>Main campus</span><span style="color:#848490">Today</span><span style="width:8px;height:8px;border-radius:50%;background:#D0BCF5"></span><span>Library annex</span><span style="color:#848490">Mon</span><span style="width:8px;height:8px;border-radius:50%;background:#D0BCF5"></span><span>Home network</span><span style="color:#848490">Sun</span></div></div></div></div>
+        </div></div>
+      <div data-reveal="" style="padding:64px 56px;display:flex;flex-direction:column;gap:22px;justify-content:center">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Device visibility</span>
+        <h3 style="font-size:clamp(30px,3.2vw,46px);font-weight:800;letter-spacing:-0.04em;line-height:1.02;color:#121218;text-wrap:balance">Know where to look when a device goes missing</h3>
+        <p style="font-size:17px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">View your fleet on a map, check a device’s latest reported location, and review its location history. Device details and last logged-in user records give IT more context to investigate what happened.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" hint-size="150px,48px">Book a Demo</x-import>
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="outline" size="lg" hint-size="150px,48px">Learn More</x-import>
+        </div>
+      </div>
+    </div>
+
+    <!-- row 2 -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;overflow:hidden">
+      <div data-reveal="" style="padding:64px 56px;display:flex;flex-direction:column;gap:22px;justify-content:center">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Missing Mode</span>
+        <h3 style="font-size:clamp(30px,3.2vw,46px);font-weight:800;letter-spacing:-0.04em;line-height:1.02;color:#121218;text-wrap:balance">Get a closer look at a missing device</h3>
+        <p style="font-size:17px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Activate Missing Mode to switch to live location tracking and collect additional recovery information. On supported devices, screen snapshots give authorized IT staff more context during an investigation.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" hint-size="150px,48px">Book a Demo</x-import>
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="outline" size="lg" hint-size="150px,48px">Learn More</x-import>
+        </div>
+      </div>
+      <div data-reveal="" style="background:radial-gradient(ellipse 80% 70% at 70% 100%,#E9DDFB,#F5F0FD 75%);padding:48px 40px;display:flex;align-items:center;justify-content:center;min-width:0"><div style="width:100%;max-width:440px;display:flex;flex-direction:column;gap:14px">
+          <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px -12px rgba(42,21,86,.25);"><div style="display:flex;justify-content:space-between;align-items:center"><span style="display:flex;gap:8px;align-items:center"><span style="width:16px;height:16px;flex-shrink:0;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/laptop.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/laptop.svg) center / contain no-repeat"></span><span style="font-size:14px;font-weight:700;color:#121218">CB-0873</span></span><span style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;font-weight:600;color:#B42318">Missing Mode</span><span style="width:36px;height:20px;border-radius:10px;background:#8248E1;position:relative"><span style="position:absolute;right:2px;top:2px;width:16px;height:16px;border-radius:50%;background:#FFFFFF"></span></span></span></div>
+            <div style="display:flex;gap:8px;align-items:center;font-size:12px;color:#5E5E6A"><span style="width:14px;height:14px;flex-shrink:0;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/radar.svg) center / contain no-repeat"></span>Live tracking on · updates every 60 s</div>
+            <div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:12px;color:#3E3E4A"><span style="display:flex;gap:6px;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#8248E1;animation:pulse 2.4s ease-out infinite"></span>2:41 PM · 41.53, -81.52</span><span style="color:#848490">now</span></div><div style="display:flex;justify-content:space-between;font-size:12px;color:#3E3E4A;padding-left:14px"><span>2:40 PM · 41.53, -81.52</span><span style="color:#848490">1 min</span></div><div style="display:flex;justify-content:space-between;font-size:12px;color:#3E3E4A;padding-left:14px"><span>2:39 PM · 41.52, -81.51</span><span style="color:#848490">2 min</span></div></div></div>
+          <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px -12px rgba(42,21,86,.25);"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#121218">Screen snapshot</span><span style="font-size:11px;font-weight:700;color:#562CAD;background:#F5F0FD;border-radius:4px;padding:3px 8px;letter-spacing:.02em">Authorized only</span></div>
+            <div style="height:120px;border-radius:8px;background:#F0F0F2;background-image:repeating-linear-gradient(135deg,#F0F0F2 0 12px,#E9E9EC 12px 24px);display:flex;align-items:center;justify-content:center"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#5E5E6A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:5px 8px">snapshot preview</span></div></div>
+        </div></div>
+    </div>
+
+    <!-- row 3 -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;overflow:hidden">
+      <div data-reveal="" style="background:radial-gradient(ellipse 80% 70% at 30% 0%,#E9DDFB,#F5F0FD 75%);padding:48px 40px;display:flex;align-items:center;justify-content:center;min-width:0"><div style="width:100%;max-width:460px;display:flex;flex-direction:column;align-items:center">
+          <div style="width:100%;background:#121218;border-radius:16px 16px 4px 4px;padding:12px;box-shadow:0 30px 60px -24px rgba(42,21,86,.45)">
+            <div style="background:#2A1556;border-radius:8px;min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:28px;text-align:center;background-image:radial-gradient(ellipse 70% 60% at 50% 0%,#562CAD,#2A1556 75%)">
+              <div style="width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;flex-shrink:0;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock-keyhole.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock-keyhole.svg) center / contain no-repeat"></span></div>
+              <div style="font-size:16px;font-weight:700;color:#FFFFFF;letter-spacing:-0.01em">This device is locked</div>
+              <div style="font-size:12px;line-height:1.5;color:#D0BCF5;max-width:280px">Property of Euclid City Schools. If found, please contact IT to arrange a return.</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><span style="font-size:11px;color:#FFFFFF;background:rgba(255,255,255,.12);border-radius:4px;padding:4px 10px">it@euclid.edu</span><span style="font-size:11px;color:#FFFFFF;background:rgba(255,255,255,.12);border-radius:4px;padding:4px 10px">(216) 555-0142</span></div>
+            </div>
+          </div>
+          <div style="width:112%;height:12px;background:#CACACE;border-radius:0 0 12px 12px"></div>
+          <div style="margin-top:20px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><span style="font-size:12px;font-weight:600;color:#562CAD;background:#F5F0FD;border:1px solid #E9DDFB;border-radius:4px;padding:4px 10px">Remote lock</span><span style="font-size:12px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:4px 10px">Unlock</span><span style="font-size:12px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:4px 10px">Remote wipe</span></div>
+        </div></div>
+      <div data-reveal="" style="padding:64px 56px;display:flex;flex-direction:column;gap:22px;justify-content:center">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Remote security</span>
+        <h3 style="font-size:clamp(30px,3.2vw,46px);font-weight:800;letter-spacing:-0.04em;line-height:1.02;color:#121218;text-wrap:balance">Take action wherever the device is</h3>
+        <p style="font-size:17px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Use remote lock to restrict access and display a custom return message, or remotely wipe data when necessary. Once the device is recovered, IT can release the lock so it can be used again. Available actions depend on the device and integration.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" hint-size="150px,48px">Book a Demo</x-import>
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="outline" size="lg" hint-size="150px,48px">Learn More</x-import>
+        </div>
+      </div>
+    </div>
+
+    <!-- row 4 -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;overflow:hidden">
+      <div data-reveal="" style="padding:64px 56px;display:flex;flex-direction:column;gap:22px;justify-content:center">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Policies &amp; automation</span>
+        <h3 style="font-size:clamp(30px,3.2vw,46px);font-weight:800;letter-spacing:-0.04em;line-height:1.02;color:#121218;text-wrap:balance">Set the rules and let Senturo respond</h3>
+        <p style="font-size:17px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Trigger actions when a device enters or leaves a defined area, connects to an unapproved network, or misses its check-in deadline. Combine geofencing, network policies, and Agent Phone Home with notifications and security actions on a schedule that fits your organization.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" hint-size="150px,48px">Book a Demo</x-import>
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="outline" size="lg" hint-size="150px,48px">Learn More</x-import>
+        </div>
+      </div>
+      <div data-reveal="" style="background:radial-gradient(ellipse 80% 70% at 70% 100%,#E9DDFB,#F5F0FD 75%);padding:48px 40px;display:flex;align-items:center;justify-content:center;min-width:0"><div style="width:100%;max-width:420px"><div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px -12px rgba(42,21,86,.25);padding:20px"><div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #E4E4E8;padding-bottom:12px"><span style="font-size:14px;font-weight:700;color:#121218">Off-campus lock</span><span style="font-size:11px;font-weight:700;color:#1F8A5B;background:#E6F4EC;border-radius:4px;padding:3px 8px;letter-spacing:.02em">Active</span></div>
+          <div style="display:flex;flex-direction:column;gap:14px;position:relative"><span style="position:absolute;left:15px;top:32px;bottom:32px;width:2px;background:#E9DDFB"></span>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:center"><span style="width:32px;height:32px;border-radius:8px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:16px;height:16px;flex-shrink:0;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pinned.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/map-pinned.svg) center / contain no-repeat"></span></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:700;color:#848490;letter-spacing:.06em;text-transform:uppercase">Trigger</span><span style="font-size:13px;font-weight:600;color:#121218">Device leaves “Main campus” geofence</span></span></div>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:center"><span style="width:32px;height:32px;border-radius:8px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:16px;height:16px;flex-shrink:0;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/monitor-smartphone.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/monitor-smartphone.svg) center / contain no-repeat"></span></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:700;color:#848490;letter-spacing:.06em;text-transform:uppercase">Applies to</span><span style="font-size:13px;font-weight:600;color:#121218">Student Chromebooks · 1,240 devices</span></span></div>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:center"><span style="width:32px;height:32px;border-radius:8px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:16px;height:16px;flex-shrink:0;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/calendar-clock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/calendar-clock.svg) center / contain no-repeat"></span></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:700;color:#848490;letter-spacing:.06em;text-transform:uppercase">Schedule</span><span style="font-size:13px;font-weight:600;color:#121218">Weekdays, 6 PM – 7 AM</span></span></div>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:center"><span style="width:32px;height:32px;border-radius:8px;background:#F5F0FD;display:flex;align-items:center;justify-content:center"><span style="width:16px;height:16px;flex-shrink:0;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-alert.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-alert.svg) center / contain no-repeat"></span></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:700;color:#848490;letter-spacing:.06em;text-transform:uppercase">Response</span><span style="font-size:13px;font-weight:600;color:#121218">Notify IT · Lock device · Show return message</span></span></div>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid #F0F0F2;padding-top:12px"><span style="font-size:12px;font-weight:600;color:#562CAD;background:#F5F0FD;border:1px solid #E9DDFB;border-radius:4px;padding:4px 10px">Geofencing</span><span style="font-size:12px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:4px 10px">Network policy</span><span style="font-size:12px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:4px 10px">Agent Phone Home</span></div></div></div></div>
+    </div>
+
+    <!-- row 5 -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;overflow:hidden">
+      <div data-reveal="" style="background:radial-gradient(ellipse 80% 70% at 30% 0%,#E9DDFB,#F5F0FD 75%);padding:48px 40px;display:flex;align-items:center;justify-content:center;min-width:0"><div style="width:100%;max-width:520px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;align-items:start">
+          <div style="min-width:0"><div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px -12px rgba(42,21,86,.25);"><div style="font-size:13px;font-weight:700;color:#121218">New broadcast</div>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;color:#848490">Send to</span><div style="display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:12px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:4px 10px">Whole fleet</span><span style="font-size:12px;font-weight:600;color:#562CAD;background:#F5F0FD;border:1px solid #E9DDFB;border-radius:4px;padding:4px 10px">Grade 9 · 312</span><span style="font-size:12px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:4px 10px">1 device</span></div></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;color:#848490">Template</span><span style="border:1px solid #CACACE;border-radius:6px;padding:8px 10px;font-size:12px;color:#121218;display:flex;justify-content:space-between;align-items:center">Return before break <span style="width:12px;height:12px;flex-shrink:0;background:#848490;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat"></span></span></div>
+            <div style="border:1px solid #CACACE;border-radius:6px;padding:10px;font-size:12px;line-height:1.5;color:#3E3E4A">Please return your Chromebook to the library by Friday, 3 PM.</div>
+            <div style="align-self:flex-end;background:#8248E1;color:#FFFFFF;font-size:12px;font-weight:700;border-radius:6px;padding:8px 14px">Send</div></div></div>
+          <div style="min-width:0;padding:40px 12px 0;animation:slideIn .9s cubic-bezier(.2,.7,.2,1) .4s both">
+            <div style="background:#121218;border-radius:12px 12px 3px 3px;padding:8px"><div style="background:#FFFFFF;border-radius:6px;min-height:170px;position:relative;overflow:hidden;background-image:linear-gradient(180deg,#F5F0FD,#FFFFFF)">
+              <div style="position:absolute;left:10px;right:10px;top:14px;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:8px;padding:10px;box-shadow:0 10px 15px -3px rgba(18,18,24,.12);display:flex;gap:8px;align-items:flex-start"><img src="assets/logo-icon-white-mark.svg" alt="" style="width:18px;height:18px;border-radius:50%;flex-shrink:0"><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:10px;font-weight:700;color:#121218">Message from IT</span><span style="font-size:10px;line-height:1.4;color:#3E3E4A">Please return your Chromebook to the library by Friday, 3 PM.</span></span></div>
+            </div></div>
+            <div style="height:8px;background:#CACACE;border-radius:0 0 8px 8px;margin:0 -12px"></div>
+          </div>
+        </div></div>
+      <div data-reveal="" style="padding:64px 56px;display:flex;flex-direction:column;gap:22px;justify-content:center">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Broadcast messages</span>
+        <h3 style="font-size:clamp(30px,3.2vw,46px);font-weight:800;letter-spacing:-0.04em;line-height:1.02;color:#121218;text-wrap:balance">Get the message onto the device</h3>
+        <p style="font-size:17px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Send return instructions, important notices, or everyday reminders directly to devices. Choose one device, a selected group, or your fleet, and reuse message templates for recurring communications.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" hint-size="150px,48px">Book a Demo</x-import>
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="outline" size="lg" hint-size="150px,48px">Learn More</x-import>
+        </div>
+      </div>
+    </div>
+
+    <!-- row 6 -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;overflow:hidden">
+      <div data-reveal="" style="padding:64px 56px;display:flex;flex-direction:column;gap:22px;justify-content:center">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Fleet organization &amp; integrations</span>
+        <h3 style="font-size:clamp(30px,3.2vw,46px);font-weight:800;letter-spacing:-0.04em;line-height:1.02;color:#121218;text-wrap:balance">Keep your fleet organized as it grows</h3>
+        <p style="font-size:17px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Use groups, tags, notes, and saved filters to find the devices you need and apply actions in bulk. Connect Senturo with your existing tools, including Google Admin, Jamf Pro, Intune, Meraki, and Incident IQ, to support enrollment and device workflows.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" hint-size="150px,48px">Book a Demo</x-import>
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="outline" size="lg" hint-size="150px,48px">Learn More</x-import>
+        </div>
+      </div>
+      <div data-reveal="" style="background:radial-gradient(ellipse 80% 70% at 70% 100%,#E9DDFB,#F5F0FD 75%);padding:48px 40px;display:flex;align-items:center;justify-content:center;min-width:0"><div style="width:100%;max-width:480px;display:flex;flex-direction:column;gap:14px">
+          <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px -12px rgba(42,21,86,.25);"><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span style="display:flex;gap:6px;align-items:center;font-size:12px;color:#5E5E6A"><span style="width:12px;height:12px;flex-shrink:0;background:#848490;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/filter.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/filter.svg) center / contain no-repeat"></span>Saved filter:</span><span style="font-size:12px;font-weight:600;color:#562CAD;background:#F5F0FD;border:1px solid #E9DDFB;border-radius:4px;padding:4px 10px">Grade 9 · offline &gt; 7 days</span><span style="margin-left:auto;font-size:12px;font-weight:700;color:#8248E1">3 selected · Lock</span></div>
+            <div style="display:grid;grid-template-columns:14px 1fr 1fr auto;gap:8px 10px;align-items:center;font-size:12px;color:#5E5E6A">
+              <span></span><span style="font-size:11px;font-weight:700;color:#848490">Device</span><span style="font-size:11px;font-weight:700;color:#848490">Group</span><span style="font-size:11px;font-weight:700;color:#848490">Tag</span>
+              <span style="width:14px;height:14px;border-radius:3px;border:1.5px solid #8248E1;background:#8248E1;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;flex-shrink:0;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="font-weight:600;color:#121218">CB-0873</span><span>Grade 9 · East</span><span><span style="font-size:12px;font-weight:600;color:#562CAD;background:#F5F0FD;border:1px solid #E9DDFB;border-radius:4px;padding:4px 10px">Loaner</span></span><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid #8248E1;background:#8248E1;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;flex-shrink:0;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="font-weight:600;color:#121218">CB-0912</span><span>Grade 9 · East</span><span><span style="font-size:12px;font-weight:600;color:#562CAD;background:#F5F0FD;border:1px solid #E9DDFB;border-radius:4px;padding:4px 10px">Loaner</span></span><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid #CACACE;background:#FFFFFF;display:flex;align-items:center;justify-content:center"></span><span style="font-weight:600;color:#121218">CB-1044</span><span>Grade 9 · West</span><span><span style="font-size:12px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:4px 10px">1:1</span></span><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid #8248E1;background:#8248E1;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;flex-shrink:0;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="font-weight:600;color:#121218">CB-1108</span><span>Grade 9 · West</span><span><span style="font-size:12px;font-weight:600;color:#562CAD;background:#F5F0FD;border:1px solid #E9DDFB;border-radius:4px;padding:4px 10px">Loaner</span></span><span style="width:14px;height:14px;border-radius:3px;border:1.5px solid #CACACE;background:#FFFFFF;display:flex;align-items:center;justify-content:center"></span><span style="font-weight:600;color:#121218">CB-1201</span><span>Grade 9 · East</span><span><span style="font-size:12px;font-weight:600;color:#3E3E4A;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:4px;padding:4px 10px">1:1</span></span>
+            </div></div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px"><div style-hover="transform:translateY(-3px);border-color:#B59AEF" style="aspect-ratio:1;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:10px;box-shadow:0 1px 3px rgba(18,18,24,.08);transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px;font-size:10px;font-weight:700;color:#3E3E4A;line-height:1.2">Google Admin</div><div style-hover="transform:translateY(-3px);border-color:#B59AEF" style="aspect-ratio:1;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:10px;box-shadow:0 1px 3px rgba(18,18,24,.08);transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px;font-size:10px;font-weight:700;color:#3E3E4A;line-height:1.2">Jamf Pro</div><div style-hover="transform:translateY(-3px);border-color:#B59AEF" style="aspect-ratio:1;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:10px;box-shadow:0 1px 3px rgba(18,18,24,.08);transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px;font-size:10px;font-weight:700;color:#3E3E4A;line-height:1.2">Intune</div><div style-hover="transform:translateY(-3px);border-color:#B59AEF" style="aspect-ratio:1;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:10px;box-shadow:0 1px 3px rgba(18,18,24,.08);transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px;font-size:10px;font-weight:700;color:#3E3E4A;line-height:1.2">Meraki</div><div style-hover="transform:translateY(-3px);border-color:#B59AEF" style="aspect-ratio:1;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:10px;box-shadow:0 1px 3px rgba(18,18,24,.08);transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px;font-size:10px;font-weight:700;color:#3E3E4A;line-height:1.2">Incident IQ</div></div>
+        </div></div>
+    </div>
+
+    <!-- row 7 -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));background:#F8F8F9;border:1px solid #F0F0F2;border-radius:28px;overflow:hidden">
+      <div data-reveal="" style="background:radial-gradient(ellipse 80% 70% at 30% 0%,#E9DDFB,#F5F0FD 75%);padding:48px 40px;display:flex;align-items:center;justify-content:center;min-width:0"><div style="width:100%;max-width:540px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;align-items:start">
+          <div style="min-width:0;background:#FFFFFF;border:1px solid #E4E4E8;border-radius:6px;box-shadow:0 20px 25px -5px rgba(18,18,24,.10);padding:22px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><img src="assets/logo-icon.svg" alt="" style="height:16px;width:auto"><span style="font-size:11px;font-weight:700;color:#562CAD;background:#F5F0FD;border-radius:4px;padding:3px 8px;letter-spacing:.02em">PDF</span></div>
+            <div style="font-size:14px;font-weight:800;color:#121218;letter-spacing:-0.01em">Recovery report · CB-0873</div>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="height:6px;border-radius:3px;background:#E4E4E8;width:90%"></span><span style="height:6px;border-radius:3px;background:#E4E4E8;width:75%"></span><span style="height:6px;border-radius:3px;background:#E4E4E8;width:85%"></span></div>
+            <div style="height:70px;border-radius:6px;background-color:#EEF0F4;background-image:linear-gradient(rgba(18,18,24,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(18,18,24,.06) 1px,transparent 1px);background-size:28px 28px;position:relative;overflow:hidden"><span style="position:absolute;left:40%;top:50%;width:14px;height:14px;border-radius:50%;background:#8248E1;border:2px solid #FFFFFF;box-shadow:0 2px 6px rgba(18,18,24,.25);transform:translate(-50%,-50%)"><span style="position:absolute;inset:-6px;border-radius:50%;background:#8248E1;animation:ping 2s ease-out infinite;opacity:.4"></span></span><span style="position:absolute;left:65%;top:35%;width:10px;height:10px;border-radius:50%;background:#B59AEF;border:2px solid #FFFFFF;box-shadow:0 2px 6px rgba(18,18,24,.25);transform:translate(-50%,-50%)"></span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="height:6px;border-radius:3px;background:#E4E4E8;width:80%"></span><span style="height:6px;border-radius:3px;background:#E4E4E8;width:60%"></span></div>
+            <div style="border-top:1px solid #F0F0F2;padding-top:8px;display:flex;justify-content:space-between;font-size:10px;color:#848490"><span>Generated Sep 24, 2026</span><span>Page 1 / 3</span></div>
+          </div>
+          <div style="min-width:0;padding-top:40px;animation:slideIn .9s cubic-bezier(.2,.7,.2,1) .3s both"><div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px -12px rgba(42,21,86,.25);"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:700;color:#121218">Roles &amp; permissions</span><span style="width:16px;height:16px;flex-shrink:0;background:#8248E1;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat"></span></div>
+            <div style="display:grid;grid-template-columns:1fr repeat(3,32px);gap:10px 4px;align-items:center;font-size:12px;color:#5E5E6A"><span></span><span style="font-size:10px;font-weight:700;color:#848490;text-align:center">View</span><span style="font-size:10px;font-weight:700;color:#848490;text-align:center">Act</span><span style="font-size:10px;font-weight:700;color:#848490;text-align:center">Snap</span>
+              <span style="font-weight:600;color:#121218">Admin</span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#1F8A5B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#1F8A5B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#1F8A5B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="font-weight:600;color:#121218">IT staff</span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#1F8A5B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#1F8A5B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#CACACE;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat"></span></span><span style="font-weight:600;color:#121218">Help desk</span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#1F8A5B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#CACACE;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat"></span></span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#CACACE;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat"></span></span><span style="font-weight:600;color:#121218">Auditor</span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#1F8A5B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/check.svg) center / contain no-repeat"></span></span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#CACACE;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat"></span></span><span style="display:flex;justify-content:center"><span style="width:14px;height:14px;flex-shrink:0;background:#CACACE;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/minus.svg) center / contain no-repeat"></span></span></div>
+            <div style="border-top:1px solid #F0F0F2;padding-top:10px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#3E3E4A"><span>Location history retention</span><span style="font-weight:600;color:#121218">90 days</span></div></div></div>
+        </div></div>
+      <div data-reveal="" style="padding:64px 56px;display:flex;flex-direction:column;gap:22px;justify-content:center">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8248E1"><span style="width:6px;height:6px;border-radius:50%;background:#8248E1"></span>Reports &amp; access controls</span>
+        <h3 style="font-size:clamp(30px,3.2vw,46px);font-weight:800;letter-spacing:-0.04em;line-height:1.02;color:#121218;text-wrap:balance">Keep a record of what happened and control who can see it</h3>
+        <p style="font-size:17px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">Export a PDF recovery report to support investigations and follow-up. Configure roles, permissions, and privacy settings so staff have access to the device information and actions relevant to their responsibilities.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" hint-size="150px,48px">Book a Demo</x-import>
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="outline" size="lg" hint-size="150px,48px">Learn More</x-import>
+        </div>
+      </div>
+    </div>
+v&gt;
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section data-screen-label="Statement" style="background:#FFFFFF;position:relative;overflow:hidden">
+  <svg viewBox="0 0 1200 400" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"><path id="stmt-path" d="M-20 20 C 200 380, 1000 380, 1220 20" fill="none" stroke="#CACACE" stroke-width="1"></path></svg>
+  <div style="max-width:1240px;margin:0 auto;padding:140px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;position:relative" data-reveal="">
+    <h2 id="stmt-text" style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-wrap:balance;max-width:20ch;min-height:clamp(2em,calc(2em + (640px - 100vw) * 100),3em);display:flex;align-items:center;justify-content:center;transition:opacity .45s ease">Chasing missing devices</h2>
+    <span id="stmt-gone" style="font-size:clamp(36px,4.8vw,64px);font-weight:600;letter-spacing:-0.04em;line-height:1;display:flex;position:relative">
+      <span data-gone-letter="" style="display:inline-block;color:#B59AEF;will-change:transform,opacity">g</span><span data-gone-letter="" style="display:inline-block;color:#BBA6EE;will-change:transform,opacity">o</span><span data-gone-letter="" style="display:inline-block;color:#C2B5EC;will-change:transform,opacity">n</span><span data-gone-letter="" style="display:inline-block;color:#CACACE;will-change:transform,opacity">e</span>
+    </span>
+  </div>
+  <div id="stmt-logo" style="position:absolute;left:0;top:0;width:48px;height:48px;margin:-24px 0 0 -24px;display:flex;align-items:center;justify-content:center;pointer-events:none;will-change:transform"><img src="assets/logo-icon-white-mark.svg" alt="Senturo" style="height:40px;width:auto;display:block;border-radius:50%"></div>
+</section>
+
+<!-- STORIES -->
+<section data-screen-label="Customer stories" id="stories" style="background:#F8F8F9">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px;align-items:center">
+    <h2 data-reveal="" style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-align:center">See how IT teams are using Senturo</h2>
+    <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      <div data-reveal="" style-hover="transform:translateY(-6px);box-shadow:0 20px 25px -5px rgba(18,18,24,.10),0 10px 10px -5px rgba(18,18,24,.04);border-color:#D0BCF5" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:24px;box-shadow:0 4px 6px -1px rgba(18,18,24,.05);overflow:hidden;display:grid;grid-template-columns:minmax(120px,40%) 1fr;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease,border-color .3s ease">
+        <div style="position:relative;min-height:260px;background:#F0F0F2;background-image:repeating-linear-gradient(135deg,#F0F0F2 0 12px,#E9E9EC 12px 24px)"><div style="position:absolute;left:0;right:0;bottom:0;padding:14px;background:rgba(18,18,24,.7);color:#FFFFFF"><div style="font-size:15px;font-weight:700">Mike Durbin</div><div style="font-size:12px;opacity:.85">Technology Coordinator, Euclid City Schools</div></div></div>
+        <div style="padding:24px 22px;display:flex;flex-direction:column;gap:14px"><h3 style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.35;color:#121218;text-wrap:pretty">How Euclid City Schools saves around 30 IT hours a month</h3><p style="font-size:15px;line-height:1.5;color:#5E5E6A;font-style:italic;text-wrap:pretty">“I know where our devices are and I can prove it.”</p><div style="display:flex;justify-content:flex-start;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto"><a href="#" style="font-size:14px;font-weight:600;color:#8248E1;display:flex;align-items:center;gap:6px">Read case study</a></div></div>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);box-shadow:0 20px 25px -5px rgba(18,18,24,.10),0 10px 10px -5px rgba(18,18,24,.04);border-color:#D0BCF5" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:24px;box-shadow:0 4px 6px -1px rgba(18,18,24,.05);overflow:hidden;display:grid;grid-template-columns:minmax(120px,40%) 1fr;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease,border-color .3s ease">
+        <div style="position:relative;min-height:260px;background:#F0F0F2;background-image:repeating-linear-gradient(135deg,#F0F0F2 0 12px,#E9E9EC 12px 24px)"><div style="position:absolute;left:0;right:0;bottom:0;padding:14px;background:rgba(18,18,24,.7);color:#FFFFFF"><div style="font-size:15px;font-weight:700">Samuel Hoch</div><div style="font-size:12px;opacity:.85">Director of Technology, Catoosa Public Schools</div></div></div>
+        <div style="padding:24px 22px;display:flex;flex-direction:column;gap:14px"><h3 style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.35;color:#121218;text-wrap:pretty">How Catoosa Public Schools saved thousands by recovering lost devices</h3><p style="font-size:15px;line-height:1.5;color:#5E5E6A;font-style:italic;text-wrap:pretty">“It proved to be invaluable within days of setting it up”</p><div style="display:flex;justify-content:flex-start;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto"><a href="#" style="font-size:14px;font-weight:600;color:#8248E1;display:flex;align-items:center;gap:6px">Read case study</a></div></div>
+      </div>
+      <div data-reveal="" style-hover="transform:translateY(-6px);box-shadow:0 20px 25px -5px rgba(18,18,24,.10),0 10px 10px -5px rgba(18,18,24,.04);border-color:#D0BCF5" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:24px;box-shadow:0 4px 6px -1px rgba(18,18,24,.05);overflow:hidden;display:grid;grid-template-columns:minmax(120px,40%) 1fr;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease,border-color .3s ease">
+        <div style="position:relative;min-height:260px;background:#F0F0F2;background-image:repeating-linear-gradient(135deg,#F0F0F2 0 12px,#E9E9EC 12px 24px)"><div style="position:absolute;left:0;right:0;bottom:0;padding:14px;background:rgba(18,18,24,.7);color:#FFFFFF"><div style="font-size:15px;font-weight:700">Joshua Rhodes</div><div style="font-size:12px;opacity:.85">IT Coordinator, Hope City Houston</div></div></div>
+        <div style="padding:24px 22px;display:flex;flex-direction:column;gap:14px"><h3 style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.35;color:#121218;text-wrap:pretty">How Hope City recovered a stolen laptop and reduced time spent tracking devices</h3><p style="font-size:15px;line-height:1.5;color:#5E5E6A;font-style:italic;text-wrap:pretty">“It’s already helped us recover a stolen laptop.”</p><div style="display:flex;justify-content:flex-start;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto"><a href="#" style="font-size:14px;font-weight:600;color:#8248E1;display:flex;align-items:center;gap:6px">Read case study</a></div></div>
+      </div>
+    </div>
+    <div data-reveal="" style="display:flex;justify-content:center">
+      <x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="outline" size="lg" hint-size="260px,48px">Read all of our case studies</x-import>
+    </div>
+  </div>
+</section>
+
+<!-- GET STARTED -->
+<section data-screen-label="Get started" id="demo" style="background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px;align-items:center">
+    <h2 data-reveal="" style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-align:center">Get Started Today</h2>
+    <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;align-items:start">
+      <div data-reveal="" style="background:radial-gradient(ellipse 90% 60% at 100% 0%,#562CAD,#2A1556 60%);border:1px solid #2A1556;border-radius:28px;padding:56px 48px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:40px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#B59AEF"><span style="width:6px;height:6px;border-radius:50%;background:#B59AEF"></span>Contact our sales team</span>
+          <h3 style="font-size:clamp(32px,3.6vw,52px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:#FFFFFF">Trusted by IT teams in K-12 and beyond</h3>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:2px solid #121218"><span style="font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#FFFFFF;line-height:1">1,600+</span><span style="font-size:17px;color:#D0BCF5">schools protected</span></div>
+          <div style="display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:2px solid #121218"><span style="font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#FFFFFF;line-height:1">29</span><span style="font-size:17px;color:#D0BCF5">U.S. states</span></div>
+          <div style="display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:2px solid #121218"><span style="font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#FFFFFF;line-height:1">8</span><span style="font-size:17px;color:#D0BCF5">countries</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+          <div style="border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.06);padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center"><span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:#B59AEF">TECH &amp; LEARNING</span><span style="font-size:14px;font-weight:800;color:#FFFFFF;line-height:1.2">Award Winner</span><span style="font-size:9px;font-weight:700;color:#B59AEF">2024</span></div>
+          <div style="border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.06);padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center"><span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:#B59AEF">TECH &amp; LEARNING</span><span style="font-size:14px;font-weight:800;color:#FFFFFF;line-height:1.2">Award Winner</span><span style="font-size:9px;font-weight:700;color:#B59AEF">2026</span></div>
+        </div>
+      </div>
+      <div data-reveal="" style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:28px;box-shadow:0 30px 60px -24px rgba(42,21,86,.25);padding:48px;display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;flex-direction:column;gap:8px"><h3 style="font-size:32px;font-weight:800;letter-spacing:-0.02em;color:#121218">Request a Demo</h3><p style="font-size:16px;color:#5E5E6A">Submit the form below as a next step</p></div>
+        <x-import component-from-global-scope="SenturoDesignSystem_139f60.Input" label="Work email" placeholder="Work email" required="{{ true }}" hint-size="100%,66px"></x-import>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Input" label="First name" placeholder="First name" required="{{ true }}" hint-size="100%,66px"></x-import>
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Input" label="Last name" placeholder="Last name" required="{{ true }}" hint-size="100%,66px"></x-import>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Input" label="Company name" placeholder="Company name" required="{{ true }}" hint-size="100%,66px"></x-import>
+          <x-import component-from-global-scope="SenturoDesignSystem_139f60.Input" label="Phone number (optional)" placeholder="Phone number" hint-size="100%,66px"></x-import>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:5px"><span style="font-size:14px;font-weight:500;color:#5E5E6A">What MDM are you using?<span style="color:#C62B2B"> *</span></span><span style="position:relative;display:block"><select style="width:100%;height:40px;padding:0 36px 0 14px;border:1.5px solid #E4E4E8;border-radius:10px;background:#FFFFFF;font-family:inherit;font-size:14px;color:#848490;outline:none"><option>Select an MDM</option><option>Google Admin Console</option><option>Jamf Pro</option><option>Microsoft Intune</option><option>Cisco Meraki</option><option>Other</option><option>No MDM</option></select><span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:#848490;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;pointer-events:none"></span></span></label>
+        <label style="display:flex;flex-direction:column;gap:5px"><span style="font-size:14px;font-weight:500;color:#5E5E6A">How many devices do you manage?<span style="color:#C62B2B"> *</span></span><span style="position:relative;display:block"><select style="width:100%;height:40px;padding:0 36px 0 14px;border:1.5px solid #E4E4E8;border-radius:10px;background:#FFFFFF;font-family:inherit;font-size:14px;color:#848490;outline:none"><option>Please Select</option><option>1–250</option><option>251–1,000</option><option>1,001–5,000</option><option>5,001–20,000</option><option>20,000+</option></select><span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:#848490;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;pointer-events:none"></span></span></label>
+        <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:500;color:#5E5E6A">Which operating systems do you manage?<span style="color:#C62B2B"> *</span></span><div style="display:flex;flex-wrap:wrap;gap:10px 20px"><label style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#121218;cursor:pointer"><input type="checkbox" style="width:16px;height:16px;accent-color:#8248E1;margin:0">Windows</label><label style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#121218;cursor:pointer"><input type="checkbox" style="width:16px;height:16px;accent-color:#8248E1;margin:0">macOS</label><label style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#121218;cursor:pointer"><input type="checkbox" style="width:16px;height:16px;accent-color:#8248E1;margin:0">ChromeOS</label><label style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#121218;cursor:pointer"><input type="checkbox" style="width:16px;height:16px;accent-color:#8248E1;margin:0">iOS / iPadOS</label><label style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#121218;cursor:pointer"><input type="checkbox" style="width:16px;height:16px;accent-color:#8248E1;margin:0">Android</label></div></div>
+        <label style="display:flex;flex-direction:column;gap:5px"><span style="font-size:14px;font-weight:500;color:#5E5E6A">How did you learn about us?</span><span style="position:relative;display:block"><select style="width:100%;height:40px;padding:0 36px 0 14px;border:1.5px solid #E4E4E8;border-radius:10px;background:#FFFFFF;font-family:inherit;font-size:14px;color:#848490;outline:none"><option>Select an option</option><option>Search</option><option>Conference</option><option>Referral</option><option>Incident IQ</option><option>Social media</option></select><span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:#848490;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/chevron-down.svg) center / contain no-repeat;pointer-events:none"></span></span></label>
+        <div style="padding-top:8px"><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="lg" hint-size="120px,48px">Submit</x-import></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section data-screen-label="FAQ" id="faq" style="background:#F8F8F9">
+  <div style="max-width:1240px;margin:0 auto;padding:120px 32px;display:flex;flex-direction:column;gap:64px">
+    <h2 data-reveal="" style="font-size:clamp(36px,4.8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1;color:#121218;text-align:center">Frequently Asked Questions</h2>
+    <div style="display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:48px;align-items:start">
+      <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:12px;box-shadow:none;border-radius:20px;padding:12px;display:flex;flex-direction:column;position:sticky;top:96px">
+        <sc-for list="{{ faqCats }}" as="c" hint-placeholder-count="7">
+          <button onClick="{{ c.select }}" style="appearance:none;border:0;background:{{ c.bg }};text-align:left;font-family:inherit;font-size:17px;font-weight:600;color:{{ c.color }};padding:14px 20px;border-radius:8px;cursor:pointer;transition:background .2s ease,color .2s ease">{{ c.name }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+        <h3 style="font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-0.02em;color:#121218;padding-bottom:20px;border-bottom:1px solid #CACACE">{{ activeCatName }}</h3>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <sc-for list="{{ faqItems }}" as="q" hint-placeholder-count="4">
+            <div style="background:#FFFFFF;border:1px solid #E4E4E8;border-radius:18px;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:#B59AEF">
+              <button onClick="{{ q.toggle }}" style="appearance:none;border:0;background:transparent;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;font-family:inherit;font-size:18px;font-weight:700;color:#121218;padding:28px 24px;cursor:pointer">{{ q.q }}<span style="width:26px;height:26px;flex-shrink:0;background:{{ q.iconColor }};-webkit-mask:url({{ q.icon }}) center / contain no-repeat;mask:url({{ q.icon }}) center / contain no-repeat"></span></button>
+              <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}"><p style="animation:fadeUp .3s ease-out both;padding:0 24px 28px;font-size:16px;line-height:1.65;color:#5E5E6A;text-wrap:pretty">{{ q.a }}</p></sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer data-screen-label="Footer" style="background:radial-gradient(ellipse 90% 70% at 50% 0%,#562CAD 0%,#2A1556 45%,#180B33 100%);color:#FFFFFF;position:relative;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:112px 32px 48px;display:flex;flex-direction:column;gap:72px">
+    <div data-reveal="" style="display:flex;flex-direction:column;align-items:center;gap:28px"><h2 style="font-size:clamp(44px,6.4vw,92px);font-weight:800;letter-spacing:-0.045em;line-height:.98;color:#FFFFFF;text-align:center;text-wrap:balance">Know where every device is</h2><p style="font-size:19px;line-height:1.5;color:#D0BCF5;text-align:center;max-width:560px;text-wrap:pretty">Locate, secure, and recover your fleet from one dashboard. See it live with our team.</p><x-import component-from-global-scope="SenturoDesignSystem_139f60.Button" variant="primary" size="xl" right-icon="{{ arrowWhite }}" hint-size="200px,56px">Book a Demo</x-import></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.16)">
+      <img src="assets/logo-full-white.svg" alt="Senturo" style="height:32px;width:auto;display:block">
+      <span style="font-size:20px;font-weight:600;color:#FFFFFF">Device tracking, security &amp; recovery for IT teams</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:40px 32px">
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+          <h4 style="font-size:22px;font-weight:700;color:#FFFFFF;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.3);margin-bottom:12px">{{ col.title }}</h4>
+          <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="6">
+            <a href="#" style-hover="color:#B59AEF;padding-left:6px" style="font-size:15px;color:#EDE6FB;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);display:block;transition:color .2s ease,padding-left .2s ease">{{ l }}</a>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;padding-top:48px;border-top:1px solid rgba(255,255,255,.16);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h4 style="font-size:24px;font-weight:700;color:#FFFFFF">Summarize Senturo with AI</h4>
+        <div style="display:flex;gap:18px">
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/asterisk.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/asterisk.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/aperture.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/aperture.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/sparkle.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/sparkle.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/orbit.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/orbit.svg) center / contain no-repeat"></span>
+          <span style="width:36px;height:36px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/hexagon.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/hexagon.svg) center / contain no-repeat"></span>
+        </div>
+        
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
+        <h4 style="font-size:24px;font-weight:700;color:#FFFFFF">Security &amp; trust</h4>
+        <div style="display:flex;gap:20px;align-items:center">
+          <div style="width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shield-check.svg) center / contain no-repeat"></span><span style="font-size:12px;font-weight:700;color:#FFFFFF">SOC 2</span><span style="font-size:10px;color:#D0BCF5">Type I</span></div>
+          <div style="width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center"><span style="width:24px;height:24px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/lock.svg) center / contain no-repeat"></span><span style="font-size:12px;font-weight:700;color:#FFFFFF">Encrypted</span><span style="font-size:10px;color:#D0BCF5">At rest &amp; in transit</span></div>
+        </div>
+        
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-end;text-align:right">
+        <h4 style="font-size:24px;font-weight:700;color:#FFFFFF">Follow us on</h4>
+        <div style="display:flex;gap:18px">
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/linkedin.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/linkedin.svg) center / contain no-repeat"></span>
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/youtube.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/youtube.svg) center / contain no-repeat"></span>
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/twitter.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/twitter.svg) center / contain no-repeat"></span>
+          <span style="width:30px;height:30px;background:#FFFFFF;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/facebook.svg) center / contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/facebook.svg) center / contain no-repeat"></span>
+        </div>
+        <p style="font-size:16px;color:#EDE6FB">Support: support@senturo.com<br>Mon–Fri, 9 a.m.–6 p.m. EST</p>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.16)">
+      <span style="font-size:14px;color:#D0BCF5">© 2026 Senturo. All rights reserved.</span>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="#" style-hover="color:#FFFFFF" style="font-size:14px;color:#D0BCF5">Privacy Policy</a>
+        <a href="#" style-hover="color:#FFFFFF" style="font-size:14px;color:#D0BCF5">Terms of Service</a>
+        <a href="#" style-hover="color:#FFFFFF" style="font-size:14px;color:#D0BCF5">Trust Center</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultTab&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Find &amp; investigate&quot;,&quot;Secure &amp; communicate&quot;,&quot;Automate &amp; document&quot;],&quot;default&quot;:&quot;Find &amp; investigate&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    if (!document.querySelector('script[data-iframe-id="gkyz3jzf4r"]')) { const gs = document.createElement('script'); gs.src = 'https://app.guideflow.com/assets/opt.js'; gs.setAttribute('data-iframe-id', 'gkyz3jzf4r'); document.body.appendChild(gs); }
+    this.onScroll = () => { const s = window.scrollY > 8; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    this.setupReveal();
+    this.startGone();
+  }
+  componentDidUpdate() { this.setupReveal(); }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); if (this.io) this.io.disconnect(); if (this.goneRaf) cancelAnimationFrame(this.goneRaf); }
+  startGone() {
+    const stmts = ['Chasing missing devices', 'Wondering who logged in last', 'Finding out a device went offline too late', 'Checking three systems to locate one laptop', 'Piecing together a recovery report'];
+    const P = 6.2, D = 0.9, C = P + D, FALL = 1.4;
+    const letterFx = [{ dx: -34, r: -28 }, { dx: -10, r: 14 }, { dx: 12, r: -12 }, { dx: 38, r: 26 }];
+    const ease = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+    let shownIdx = 0, restoredPass = 0, fadedPass = -1, broken = false, t0 = null;
+    const tick = now => {
+      this.goneRaf = requestAnimationFrame(tick);
+      const path = document.getElementById('stmt-path'), logo = document.getElementById('stmt-logo'), text = document.getElementById('stmt-text');
+      if (!path || !logo || !text) return;
+      const letters = document.querySelectorAll('[data-gone-letter]');
+      if (t0 === null) t0 = now;
+      const t = (now - t0) / 1000, k = Math.floor(t / C), local = t - k * C;
+      const p = Math.min(local / P, 1), e = ease(p), u = k % 2 === 0 ? e : 1 - e;
+      const sec = path.ownerSVGElement.parentElement, W = sec.clientWidth, H = sec.clientHeight, L = path.getTotalLength();
+      const pt = path.getPointAtLength(u * L), pt2 = path.getPointAtLength(Math.min(L, u * L + 4));
+      const sx = W / 1200, sy = H / 400;
+      const ang = Math.atan2((pt2.y - pt.y) * sy, (pt2.x - pt.x) * sx) * 180 / Math.PI * (k % 2 === 0 ? 1 : -1);
+      logo.style.transform = `translate(${pt.x * sx}px,${pt.y * sy}px) rotate(${(ang * 0.35).toFixed(2)}deg)`;
+      // break: time since the logo crossed the centre of this pass
+      const tb = local - P / 2;
+      if (tb >= 0 && tb < FALL + 0.5) {
+        broken = true;
+        const b = Math.min(tb / FALL, 1), crack = tb < 0.18 ? Math.sin(tb * 90) * 1.4 * (1 - tb / 0.18) : 0;
+        letters.forEach((el, i) => {
+          const f = letterFx[i], stag = Math.max(0, Math.min(1, (b - i * 0.06) / 0.82));
+          el.style.transition = 'none'; el.style.filter = 'none';
+          el.style.transform = `translate(${crack + f.dx * stag}px,${crack * 0.6 + 260 * stag * stag}px) rotate(${f.r * stag}deg)`;
+          el.style.opacity = String(1 - Math.max(0, (stag - 0.45) / 0.55));
+        });
+      }
+      // swap statement + restore "gone" while the logo rests at the far side
+      // old statement drifts out while the logo is still travelling away from centre
+      if (tb > FALL + 0.9 && fadedPass !== k) {
+        fadedPass = k;
+        text.style.transition = 'opacity .9s cubic-bezier(.4,0,.2,1), transform .9s cubic-bezier(.4,0,.2,1), filter .9s ease';
+        text.style.opacity = '0'; text.style.transform = 'translateY(-8px) scale(.985)'; text.style.filter = 'blur(5px)';
+      }
+      // new statement + "gone" gather together while the logo rests at the far side
+      if (local > P + D * 0.15 && restoredPass !== k + 1) {
+        restoredPass = k + 1;
+        const next = (k + 1) % stmts.length;
+        shownIdx = next;
+        text.style.transition = 'none';
+        text.textContent = stmts[next];
+        text.style.transform = 'translateY(16px) scale(.98)'; text.style.filter = 'blur(5px)'; text.style.opacity = '0';
+        letters.forEach((el, i) => {
+          el.style.transition = 'none';
+          const f = letterFx[i];
+          el.style.transform = `translate(${f.dx * 0.5}px,${34 + i * 4}px) rotate(${f.r * 0.35}deg)`;
+          el.style.opacity = '0';
+          el.style.filter = 'blur(3px)';
+        });
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          text.style.transition = 'opacity 1s cubic-bezier(.2,.7,.2,1), transform 1.1s cubic-bezier(.2,.7,.2,1), filter 1s ease';
+          text.style.opacity = '1'; text.style.transform = 'none'; text.style.filter = 'none';
+          letters.forEach((el, i) => {
+            const d = 260 + i * 70;
+            el.style.transition = `opacity .8s ease ${d}ms, transform 1s cubic-bezier(.2,.8,.2,1) ${d}ms, filter .8s ease ${d}ms`;
+            el.style.transform = 'none'; el.style.opacity = '1'; el.style.filter = 'none';
+          });
+        }));
+        broken = false;
+      }
+    };
+    this.goneRaf = requestAnimationFrame(tick);
+  }
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    if (!this.io) this.io = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { const el = e.target; el.style.opacity = '1'; el.style.transform = 'none'; el.setAttribute('data-revealed', '1'); this.io.unobserve(el); } }); }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('[data-reveal]:not([data-revealed])').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) { el.setAttribute('data-revealed', '1'); return; }
+      const t = el.style.transition || '';
+      el.style.transition = (t ? t + ',' : '') + 'opacity .8s cubic-bezier(.2,.7,.2,1)' + (t.includes('transform') ? '' : ',transform .8s cubic-bezier(.2,.7,.2,1)');
+      el.style.opacity = '0'; el.style.transform = 'translateY(28px)';
+      el.setAttribute('data-revealed', 'pending');
+      this.io.observe(el);
+    });
+  }
+  state = { tab: null, cat: 0, open: {}, scrolled: false };
+  icon(name, color, size) {
+    const u = `url(https://unpkg.com/lucide-static@0.460.0/icons/${name}.svg) center / contain no-repeat`;
+    return React.createElement('span', { style: { display: 'inline-block', width: size, height: size, background: color, WebkitMask: u, mask: u } });
+  }
+  renderVals() {
+    const { cat, open } = this.state;
+    const tabNames = ['Find & investigate', 'Secure & communicate', 'Automate & document'];
+    const tab = this.state.tab ?? Math.max(0, tabNames.indexOf(this.props.defaultTab ?? 'Find & investigate'));
+    const on = '#F5F0FD', off = '#FFFFFF';
+    const cats = ["General","Device Tracking & Recovery","Remote Actions & Messaging","Policies & Automation","Setup & Integrations","Customer Support","Data Security & Privacy"];
+    const faq = [[["What is Senturo?","Senturo helps IT teams locate, secure, and recover company or school devices. It brings device tracking, location history, remote actions, and security automations into one platform."],["Who is Senturo for?","Senturo is built for organizations managing mobile devices, including schools, businesses, healthcare providers, retailers, and field teams."],["Which devices and operating systems does Senturo support?","Senturo supports Windows, macOS, ChromeOS, iOS, iPadOS, and Android. Available tracking features and security actions vary by platform."],["How is Senturo different from an MDM?","An MDM handles tasks such as app deployment, device configuration, and operating-system policies. Senturo adds location visibility, recovery tools, and security automations alongside it."],["Can I use Senturo without an MDM?","Yes, you can enroll devices directly in Senturo. Connecting an MDM can simplify deployment and provide additional device actions."],["Can I manage devices across multiple locations?","Yes, you can view devices across locations in one dashboard and organize them into groups by office, school, department, or device type."]],[["How does Senturo locate devices?","Senturo uses available location signals, including nearby Wi-Fi networks and device location services, to estimate a device’s position. Accuracy depends on the device, permissions, and surrounding signals."],["How often is a device’s location updated?","Senturo documents standard check-ins every 10 minutes and updates every 60 seconds in Missing Mode. Reporting depends on connectivity and the device’s configuration."],["Can Senturo locate an offline device?","You can review its last reported location and recorded history. A device that is powered off or fully disconnected cannot send a new location until it reconnects."],["What is Missing Mode, and when should I activate it?","Activate Missing Mode when a device is lost or suspected stolen. It increases tracking frequency and enables recovery features, including screenshots on supported devices."],["Can I view a device’s location history?","Yes, you can review previously reported locations and timestamps, subject to your account’s retention policy and privacy settings."],["Can I see who last logged in?","Yes, Senturo provides last logged-in user information where supported. This helps identify the most recent account used on the device, which may differ from its assigned owner."],["Which devices support screenshots in Missing Mode?","Senturo’s current automation documentation lists Windows, macOS, and ChromeOS. Screenshots are not supported on iOS, iPadOS, or Android, and require the relevant permissions and settings."],["Can I export a PDF recovery report?","Yes, Senturo can generate a PDF recovery report to share relevant device information during an investigation or recovery."]],[["Which devices can I remotely lock or wipe?","Senturo Lock supports Windows, macOS, and ChromeOS, while Senturo Wipe supports Windows and macOS. Connected MDMs provide additional actions depending on the platform and enrollment."],["Can I add return instructions to a locked device?","Yes, Senturo Lock lets you display a custom message, contact details, and an optional image to help someone return the device. Mark the device as missing before applying Senturo Lock."],["Can Senturo continue tracking a locked device?","Yes, Senturo Lock is designed to keep tracking active while restricting access. The device still needs connectivity and the required permissions to report its location. MDM locks can behave differently."],["Can I unlock a device after it’s recovered?","Yes, an authorized administrator can release a Senturo lock remotely once the device can receive the command."],["What happens if I send a command while a device is offline?","Remote commands generally wait until the device reconnects. The exact behavior depends on the action and whether it is handled by Senturo or a connected MDM."],["What does remote wipe delete?","Senturo Wipe for Windows and macOS removes personal data while preserving the Senturo agent for continued tracking. MDM wipe commands can behave differently, so review the selected action before confirming it."],["Can I send a message to one device or my whole fleet?","Yes, broadcasts let you send messages to individual devices, selected groups, or your fleet. You can also save templates for recurring messages."],["Can I take action on multiple devices at once?","Yes, select devices and use bulk actions to send messages or apply supported security commands."]],[["Which device events can trigger an automation?","Triggers include entering or leaving a geofence, connecting through an unapproved network, and exceeding a check-in deadline. You choose the devices, actions, and schedule for each automation."],["How do geofencing alerts and actions work?","Create a geographic boundary and choose what happens when a device reports a location inside or outside it. Responses can include notifying IT or running supported security actions."],["What is Agent Phone Home?","Agent Phone Home checks how long a device has gone without contacting Senturo. You set the allowed period and connect the policy to an action such as Senturo Lock."],["Can I trigger an action when a device stops checking in?","Yes, create an Agent Phone Home policy with a check-in deadline, select the device groups, and configure the response. Different groups can have different deadlines."],["Can I detect devices using unapproved networks?","Yes, IP fencing lets you define approved network ranges and trigger an automation when a device reports a connection outside them."],["Can I automatically activate Missing Mode or lock a device?","Yes, both are available as automation actions on supported devices. An automation can run multiple actions in order, such as activating Missing Mode, locking the device, and notifying IT."],["Can I schedule policies or pause them during holidays?","Yes, automations support schedules and exclusions so you can control when they run, including exceptions for holidays or weekends."],["Can different device groups have different policies?","Yes, assign automations to specific groups to apply different rules across schools, departments, locations, or device types."]],[["How do I enroll devices in Senturo?","Choose the operating system in Device Enrollment and follow the instructions to install the Senturo agent, app, or extension. You can enroll devices individually or use the available bulk deployment options."],["Which MDM platforms does Senturo integrate with?","Senturo integrates with Google Admin Console, Jamf Pro, Microsoft Intune, and Cisco Meraki. It also connects with Incident IQ for asset-based recovery workflows."],["How does Senturo work with Incident IQ?","Senturo adds links to Incident IQ asset records that open the device’s Senturo console. Authorized staff can view locations and users, change device status, and access supported recovery actions."],["Can I deploy Senturo across my fleet through my MDM?","Yes, supported deployment methods let you distribute the Senturo app, agent, or extension through your MDM. Some operating-system permissions still require approval on the device."],["Can I connect more than one MDM?","Yes, Senturo supports multiple MDM integrations at the same time, allowing you to view devices from different systems in one dashboard."],["Can I organize devices by school, department, or location?","Yes, use groups, tags, notes, and saved filters to organize your fleet and find specific devices."],["Can I assign staff access to specific device groups?","Yes, group-based access and role permissions let you limit which devices staff can manage and which actions they can perform."]],[["How do I contact Senturo support?","Email support@senturo.com or create and manage tickets through the Senturo support portal."],["What support is included with my subscription?","Senturo lists standard support hours as Monday through Friday, 9 a.m. to 6 p.m. EST. Out-of-hours support is available through Priority Support; check your agreement for your account’s coverage."],["Can your team help with setup and deployment?","Contact Senturo support with your device types, MDM, and rollout requirements to arrange the appropriate setup assistance."],["Do you offer training for IT teams?","Contact your Senturo account manager or support team to confirm the training options available for your organization."],["Where can I find setup guides and troubleshooting instructions?","Visit the Senturo Knowledge Base for enrollment guides, integration instructions, feature documentation, and troubleshooting."]],[["What device and user information does Senturo collect?","Depending on your platform and settings, Senturo can collect device identifiers, location history, check-in times, network details, last logged-in user information, and recovery screenshots."],["Who can view device locations and take security actions?","Access depends on the roles, permissions, and privacy settings configured for your organization. You can restrict sensitive information and actions to authorized staff."],["Can location information stay hidden until a device is reported missing?","Yes, Privacy-First Geotracking can hide location information until Missing Mode is activated. Another option requires approval from a second administrator before location data becomes visible. Contact Senturo to configure your preferred level."],["Can I disable screenshots or other privacy-sensitive features?","Yes, Senturo provides controls for disabling unwanted tracking features. You can also request that a tracking data type be disabled across your account."],["Does Senturo keep a record of administrator activity?","Yes, Senturo maintains action history and audit logs to help your team review activity and investigate changes."],["Where is device data stored, and how is it protected?","Senturo hosts its platform on Microsoft Azure in the United States. Its published controls include encryption at rest and in transit, authentication, and access restrictions."],["How long does Senturo retain location history and other records?","Retention depends on the data type and your account’s policy. Contact Senturo to confirm the periods that apply to your organization or discuss a custom retention arrangement."],["What security certifications and documentation are available?","Senturo’s security page lists SOC 2 Type I. Visit the Senturo Trust Center to review available information and request security documentation."],["How can schools configure Senturo to support their privacy requirements?","Schools can restrict access by role, hide location information during normal use, require additional approval, and disable sensitive features. These controls should be configured around the district’s policies for device recovery and data access."]]];
+    return {
+      navShadow: this.state.scrolled ? '0 20px 40px -16px rgba(18,18,24,.22)' : '0 1px 3px rgba(18,18,24,.06)',
+      navBorder: this.state.scrolled ? 'rgba(18,18,24,.08)' : 'rgba(18,18,24,.05)',
+      arrowWhite: this.icon('arrow-right', '#FFFFFF', 14),
+      arrowPurple: this.icon('arrow-right', '#8248E1', 14),
+      tab0: () => this.setState({ tab: 0 }), tab1: () => this.setState({ tab: 1 }), tab2: () => this.setState({ tab: 2 }),
+      isTab0: tab === 0, isTab1: tab === 1, isTab2: tab === 2,
+      tabBg0: tab === 0 ? '#FFFFFF' : 'transparent', tabBg1: tab === 1 ? '#FFFFFF' : 'transparent', tabBg2: tab === 2 ? '#FFFFFF' : 'transparent',
+      tabColor0: tab === 0 ? '#121218' : '#5E5E6A', tabColor1: tab === 1 ? '#121218' : '#5E5E6A', tabColor2: tab === 2 ? '#121218' : '#5E5E6A',
+      tabShadow0: tab === 0 ? '0 1px 3px rgba(18,18,24,.12)' : 'none', tabShadow1: tab === 1 ? '0 1px 3px rgba(18,18,24,.12)' : 'none', tabShadow2: tab === 2 ? '0 1px 3px rgba(18,18,24,.12)' : 'none',
+      integrations: ['Salesforce', 'HubSpot', 'Zoho', 'Dynamics', 'Pardot', 'Pipedrive', 'monday', 'Marketo', 'Zapier', 'Outreach', 'Slack', 'Outlook', 'Azure', 'Google', 'Nimble', 'Workday', 'Eloqua', 'Freshsales'],
+      faqCats: cats.map((name, i) => ({ name, bg: i === cat ? on : 'transparent', color: i === cat ? '#562CAD' : '#5E5E6A', select: () => this.setState({ cat: i, open: {} }) })),
+      activeCatName: cats[cat],
+      faqItems: faq[cat].map(([q, a], i) => {
+        const isOpen = !!open[i];
+        return { q, a, open: isOpen, icon: `https://unpkg.com/lucide-static@0.460.0/icons/${isOpen ? 'circle-minus' : 'circle-plus'}.svg`, iconColor: isOpen ? '#8248E1' : '#CACACE', toggle: () => this.setState(s => ({ open: { ...s.open, [i]: !s.open[i] } })) };
+      }),
+      footerCols: [{"title":"Product","links":["Device Tracking","Missing Mode","Senturo Lock & Wipe","Broadcast Messages","Automations & Policies","Geofencing","Recovery Reports","Privacy-First Geotracking"]},{"title":"Solutions","links":["K-12 Schools","Higher Education","Business","Healthcare","Retail","Field Teams"]},{"title":"Integrations","links":["Google Admin Console","Jamf Pro","Microsoft Intune","Cisco Meraki","Incident IQ","Device Enrollment"]},{"title":"Resources","links":["Case Studies","Knowledge Base","Support Portal","Blog","Pricing","Login"]},{"title":"Company","links":["About Senturo","Security & Trust Center","Contact Sales","Careers","Partners"]}],
+    };
+  }
+}
+</script>
+</body>
+</html>
